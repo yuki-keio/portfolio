@@ -1,0 +1,33 @@
+.text-small {
+  font-size: 15px;
+  font-family: serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: sans-serif;
+border-bottom: 1px solid rgb(176, 176, 176);
+padding:0px 5px;
+display: inline-block;
+}
+.click{
+  color:deepskyblue;
+}
+.click:hover{
+  color:rgb(0, 102, 255);
+}
+a{
+  color:rgba(69, 160, 240, 0.961)
+}
+img.lshow{
+  height: auto;
+  width: 100%;
+  }
+
+#codeIcon{
+  margin-left: 10px;
+  margin-right: 0px;
+  width: 20px;
+  color: white;
+  }
