@@ -1,0 +1,5 @@
+[[redirects]]
+from = "https://your-netlify-site.netlify.app/*"
+to = "https://yuki-lab.com/:splat"
+status = 301
+force = true
