@@ -1,0 +1,14 @@
+# Node.js / npm の一時ファイル（不要な場合）
+node_modules/
+package-lock.json
+
+# エディタ設定（VSCodeやJetBrains）
+.vscode/
+.idea/
+
+# OSの不要なファイル
+.DS_Store
+Thumbs.db
+
+# MDBootstrap のビルド関連
+.mdb/
