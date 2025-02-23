@@ -1,5 +1,14 @@
+[build]
+  functions = "netlify/functions"
+
 [[redirects]]
-from = "https://your-netlify-site.netlify.app/*"
-to = "https://yuki-lab.com/:splat"
-status = 301
-force = true
+  from = "/sitemap.xml"
+  to = "/.netlify/functions/generate-sitemap"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "https://yuki-lab.com/:splat"
+  status = 301
+  force = true
+  conditions = { Host = "yuki-gh-portfolio.netlify.app" }
