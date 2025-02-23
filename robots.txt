@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://reversi.yuki-lab.com/sitemap.xml
+Sitemap: https://yuki-lab.com/sitemap.xml
