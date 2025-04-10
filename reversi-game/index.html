@@ -238,8 +238,11 @@
                 const url = "https://yuki-lab.com"; 
                 window.open(url, "_blank");
             });
+            document.getElementById("play_othello").addEventListener("click", function() {
+                const url = "https://reversi.yuki-lab.com"; 
+                window.open(url, "_blank");
+            });
         });
-        
 
     </script>
 </head>
@@ -259,7 +262,7 @@
                 </button>
             </div>
         </header>
-
+        <hr>
         <div class="screenshots">
             <div class="screenshot">
                 <img id="sc1" src="../image/screenshot_iphone.png" alt="iPhoneでの写真" />
@@ -298,7 +301,6 @@
                 <p>初心者向けの基本戦略から上級者向けの高度なテクニックまで、オセロの戦略を学べるガイドを提供。実践的な例で分かりやすく解説します。</p>
             </div>
         </div>
-        
         <div class="premium">
             <h3>プレミアムプラン</h3>
             <ul>
@@ -328,7 +330,7 @@
                 </p>
             </div>
         </div>
-        <div class="start">🎮️ オセロで遊ぶ</div>
+        <div class="start" id="play_othello">🎮️ オセロで遊ぶ</div>
 
         <footer>
             <!--特定商取引法に基づく表記のurl-->
