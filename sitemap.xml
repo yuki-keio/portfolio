@@ -3,8 +3,17 @@
 
 <url>
   <loc>https://yuki-lab.com/</loc>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://shogi.yuki-lab.com/</loc>
   <priority>1.0</priority>
   <changefreq>monthly</changefreq>
 </url>
-
+<url>
+  <loc>https://reversi.yuki-lab.com/</loc>
+  <priority>1.0</priority>
+  <changefreq>monthly</changefreq>
+</url>
 </urlset>
