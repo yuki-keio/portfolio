@@ -20,10 +20,6 @@ display: inline-block;
 a{
   color:rgba(69, 160, 240, 0.961)
 }
-img.lshow{
-  height: auto;
-  width: 100%;
-  }
 
 #codeIcon{
   margin-left: 10px;
