@@ -39,108 +39,672 @@
 
     <link rel="stylesheet" href="./css/style.css" />
 
-    <title>yuki</title>
+    <title>yuki - Portfolio</title>
 
     <meta property="og:type" content="website" />
-    <!--TODO
-    <meta name="description" content="yukiの自己紹介用ページです" />
+    <meta name="description" content="yukiのポートフォリオサイト。Webサービス開発とニューロダイバーシティ推進事業を行っています。" />
 
-    <meta property="og:title" content="yuki">
-    <meta property="og:description" content="yukiの自己紹介用ページです">
-    <meta property="og:url" content="">
-    <meta property="og:site_name" content="サイト全体の名前">
-    <meta property="og:image" content="/image/ + 画像の名前">
+    <meta property="og:title" content="yuki - Portfolio">
+    <meta property="og:description" content="yukiのポートフォリオサイト。Webサービス開発とニューロダイバーシティ推進事業を行っています。">
+    <meta property="og:url" content="https://yuki-lab.com/">
+    <meta property="og:site_name" content="yuki Portfolio">
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@Senhana2" />
 
-    <link rel="icon" href="/image/icon/favicon-16.png" sizes="16x16" type="image/png" />
-    <link rel="icon" href="/image/icon/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/image/icon/favicon-48.png" sizes="48x48" type="image/png" />
-    <link rel="icon" href="/image/icon/favicon-62.png" sizes="62x62" type="image/png" />
-    <link rel="apple-touch-icon-precomposed" href="/image/icon/apple-touch-icon.png">
-   -->
+    <style>
+      :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #7c3aed;
+        --accent-color: #06b6d4;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --bg-light: #f8fafc;
+        --white: #ffffff;
+        --border-color: #e5e7eb;
+        --shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: var(--bg-light);
+        overflow-x: hidden;
+      }
+
+      .hero-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 120px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        margin-bottom: 15px;
+        opacity: 0.9;
+        font-weight: 400;
+      }
+
+      .hero-description {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        opacity: 0.8;
+        margin-bottom: 40px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .btn-primary {
+        background: white;
+        color: var(--primary-color);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border-color: white;
+      }
+
+      .btn-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+        text-decoration: none;
+      }
+
+      .btn-primary:hover {
+        color: var(--primary-color);
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: var(--primary-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .content-card {
+        background: var(--white);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        margin: 40px 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+      }
+
+      .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 30px;
+        position: relative;
+      }
+
+      .card-header h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .card-body {
+        padding: 40px;
+      }
+
+      .projects-grid {
+        display: grid;
+        gap: 25px;
+      }
+
+      .project-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 25px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        background: var(--white);
+      }
+
+      .project-item:hover {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        transform: translateX(5px);
+        border-color: var(--accent-color);
+      }
+
+      .project-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+      }
+      .project-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+      }
+      .github-logo{
+        width: 20px;
+        height: 20px;
+        mask-image: url(./image/github.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: #FFF;
+      }
+      #github-link:hover .github-logo{
+        background-color: var(--primary-color);
+      }
+
+      .project-content {
+        flex: 1;
+      }
+
+      .project-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--text-dark);
+      }
+
+      .project-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .project-link:hover {
+        color: var(--secondary-color);
+        text-decoration: none;
+      }
+
+      .project-description {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-top: 5px;
+      }
+
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .badge {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .badge-success { background: #10b981; color: white; }
+      .badge-danger { background: #ef4444; color: white; }
+      .badge-warning { background: #f59e0b; color: white; }
+      .badge-info { background: var(--accent-color); color: white; }
+      .badge-secondary { background: #6b7280; color: white; }
+
+      .profile-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 50px;
+        margin: 40px 0;
+        box-shadow: var(--shadow);
+        text-align: center;
+        border: 1px solid var(--border-color);
+      }
+
+      .profile-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin-bottom: 30px;
+        text-align: left;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+        color: white;
+        text-decoration: none;
+      }
+
+      .group-section {
+        border-left: 3px solid var(--accent-color);
+        padding-left: 20px;
+        margin: 30px 0;
+      }
+
+      .group-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .footer {
+        background: var(--text-dark);
+        color: white;
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 60px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 80px 0 60px;
+        }
+        
+        .card-body {
+          padding: 30px 20px;
+        }
+        
+        .profile-card {
+          padding: 30px 20px;
+        }
+        
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .btn-cta {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header id="header"></header>
-    <main class="bg-light m-2">
-      <div class="container-sm text-opacity-75 text-light  mb-2 bg-dark p-2">
-
-          <h2>自己紹介</h2>
-          <br>
-          <p class="container text-small">
-            思いついたITサービスを試作するのが好き。慶應義塾大学 環境情報学部の4年生です。ニューロダイバーシティの推進によって、一般的には「発達障害」とされるマイノリティも含めてあらゆる特性の人が輝ける「生きづらさのない社会」を目指す「<a href="https://dioden.org/">一般社団法人ニューロダイバーシティ協会</a>」の代表理事を務めています。所属している <a href="https://suzukanlab.com/newscategory/yuki-ichida/">SFCすずかんゼミでも、このプロジェクトを扱っています。</a> 
-            <!--<a href="why.html">▶活動の経緯</a> -->
-            <br>
-            <br>
-            
-            GitHub ▶ <a href="https://github.com/yuki-keio/"> https://github.com/yuki-keio/</a>
-
-          </p>
-      </div>
-      <div id="works" class="container-sm text-opacity-75 text-light mb-2 bg-dark p-2">
-          <h2 id="web">WEBサービス</h2>
-          <p class="container text-small">
-              開発したWebアプリ・Webサイトの一覧です
-              <ul>
-                <span class="badge bg-success">2025~</span>
-                <li><a href="https://jumping.yuki-lab.com/">2Dアクションゲーム</a></li>
-                <li><a href="https://puzzle.yuki-lab.com/">パズルゲーム</a></li>
-                <li><a href="https://shogi.yuki-lab.com/">スマート将棋盤</a></li>
-                <li><a href="https://number.yuki-lab.com/">推理ゲーム</a></li>
-                <span class="badge bg-danger">HOT!</span>  <span class="badge bg-success">2024~</span>
-                <li><a href="https://reversi.yuki-lab.com/online/">オセロ通信対戦</a></li>
-                <div class="small">サーバーサイドの処理を実装することで、通信対戦を可能にしました</div>
-                <li><a href="https://reversi.yuki-lab.com/ai/">オセロAIと対戦できるWebサイト</a></li>
-                <div class="small">アルファベータ法を用いてオセロAIを実装しました</div>
-                <li><a href="./reversi-game/">リバーシWeb</a></li>
-                <div class="small">月間アクティブ3万人の人気オセロゲーム。Claudeを用いることで、プロトタイプは1分で実装しました</div>
-                <br>
-                <span class="badge bg-danger">HOT!</span>
-                <span class="badge bg-success">GPTs</span>
-                <br>
-                <li> <a href="https://chatgpt.com/g/g-8hmJanRZA-tasukuguan-li-ai/">タスク管理AI</a>
-                  <div class="small">Google Carender APIを用いて、ChatGPTからGoogleカレンダーを操作できるようにするGPTsです。本GPTs以外にも、いくつか人気のGPTsを公開しています
-                  </div>
-                </li>
-                
-                
-                <span class="badge bg-danger">HOT!</span>     <span class="badge bg-success">WEBサイト（2022/4~）</span>
-                <li><a href="https://dioden.org">一般社団法人ニューロダイバーシティ協会・公式ホームページ</a><br><div class="small">マスコットキャラクターやファビコンは友人および協会メンバーの制作です</div>
-                </li>
-                <span class="badge bg-success">Wiki（2022/3）</span>
-                <li><a href="https://dioden.org/wiki/">発達Wiki</a>
-                </li>
-                <li><a href="https://web.sfc.keio.ac.jp/~t21055yi/max-min3/">3次以下の関数の最大最小を求めるツール</a></li>
-                <span class="badge bg-danger">HOT!</span>
-                <span class="badge bg-success">2021/7</span>
-                <li><a href="https://web.sfc.keio.ac.jp/~t21055yi/regex/">正規表現も使える 文字列置換WEBアプリ</a></li>
-                <li><a href="https://web.sfc.keio.ac.jp/~t21055yi/regex/quote/">文字列中の引用符をエスケープするツール</a></li>
-                <span class="badge bg-danger">HOT!</span>
-                <li><a href="https://web.sfc.keio.ac.jp/~t21055yi/url_service/">日本語URLをXなどのSNSで使用可能な形式へエンコード</a></li>
-                <span class="badge bg-success  text-">デビュー作 (2021)</span>
-                <li><a href="https://web.sfc.keio.ac.jp/~t21055yi/timer/">コマンド操作可能で、かつ視覚障害があっても使いやすい高速タイマー</a></li>
-                  
-              </ul>
-          </p>
-      </div>
-      <div class="container-sm text-opacity-75 text-light bg-dark p-2 mb-2">
-        <h2 id="ios">iOSアプリ</h2>
-        <p class="container text-small">
-            開発したiOS（iPhone・iPad）向けアプリの一覧です
-           
-            <ul>
-                <span class="badge bg-danger">サービス終了済み</span>
-                <li>専門家同士で会話できるSNSアプリ・Senhana</li>
-            </ul>
-        </p>
+    <!-- ヒーローセクション -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">yuki</h1>
+        <p class="hero-subtitle">Web Developer & Social Entrepreneur</p>
+        <p class="hero-description">出身：慶應義塾大学 環境情報学部</p>
         
-    </div>
+        <div class="cta-buttons">
+          <a href="#works" class="btn-cta btn-secondary">
+            <i class="fas fa-code"></i>
+            作品を見る
+          </a>
+          <a href="https://github.com/yuki-keio/" class="btn-cta btn-secondary" id="github-link">
+            <div alt="GitHubのアイコン" class="github-logo"></div>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main class="container">
+      <!-- プロフィールセクション -->
+      <div class="profile-card">
+        <h2 style="color: var(--text-dark); margin-bottom: 30px; text-align: left;">
+          <i class="fas fa-user-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+          自己紹介
+        </h2>
+        <div class="profile-text">
+          はじめまして、yukiです。私は、ニューロダイバーシティの推進によって、「生きづらさのない社会」を目指す「<a href="https://dioden.org/" class="project-link">一般社団法人ニューロダイバーシティ協会</a>」の代表理事を務めています。所属している <a href="https://suzukanlab.com/newscategory/yuki-ichida/" class="project-link">SFCすずかんゼミでも、このプロジェクトを扱っています。</a>
+          <br>
+          趣味ではITサービスの開発を行っており、最近はWebアプリケーションやAIを活用したプロジェクトに取り組んでいます。
+        </div>
+        
+        <div class="social-links">
+          <a href="https://github.com/yuki-keio/" class="social-link">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a href="https://dioden.org/" class="social-link">
+            <i class="fas fa-building"></i>
+            協会公式サイト
+          </a>
+        </div>
+      </div>
+
+      <!-- Webサービスセクション -->
+      <div class="content-card" id="works">
+        <div class="card-header">
+          <h2>
+            <i class="fas fa-code"></i>
+            Webサービス・アプリケーション
+          </h2>
+        </div>
+        <div class="card-body">
+          <p style="color: var(--text-light); margin-bottom: 30px; font-size: 1.1rem;">開発したWebアプリケーション・Webサイトの一覧</p>
+          
+
+          <!-- 2025年のプロジェクト -->
+          <div class="group-section">
+            <div class="group-title">
+              <span class="badge badge-success">2025年</span>
+              ミニゲーム・AI
+            </div>
+            <div class="projects-grid">
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-robot"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://neurodivergent.yuki-lab.com" class="project-link">発達AI</a>
+                  </div>
+                  <div class="project-description">ニューロダイバージェントの当事者の1300個の経験則の独自データベースを踏まえ、チャットAIがアドバイスを生成</div>
+                </div>
+              </div>
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-gamepad"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://jumping.yuki-lab.com/" class="project-link">2Dアクションゲーム</a>
+                  </div>
+                  <div class="project-description">あなたは柴犬を操作し、虎に食べられないようゴールを目指します。良いスコアが取れたらSNSに投稿！</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-puzzle-piece"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://puzzle.yuki-lab.com/" class="project-link">パズルゲーム</a>
+                  </div>
+                  <div class="project-description">シンプルなブロック消しパズル。AIエージェントを用いて作成</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><img src="./image/shogi.png" alt="スマート将棋盤のアイコン" class="project-img"></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://shogi.yuki-lab.com/" class="project-link">スマート将棋盤</a>
+                  </div>
+                  <div class="project-description">将棋のルールを踏まえて動作するインテリジェントな将棋盤</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-search"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://number.yuki-lab.com/" class="project-link">推理ゲーム</a>
+                  </div>
+                  <div class="project-description">正解の数字を当てるゲーム</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2024年のプロジェクト -->
+          <div class="group-section">
+            <div class="group-title">
+              <span class="badge badge-danger">注目</span>
+              <span class="badge badge-success">2024年</span>
+              人気Webゲーム
+            </div>
+            <div class="projects-grid">
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-circle"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://reversi.yuki-lab.com/online/" class="project-link">オセロ通信対戦</a>
+                  </div>
+                  <div class="project-description">サーバーサイドの処理を実装し、リアルタイム通信対戦やオンライン対戦のマッチングを実現</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-robot"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://reversi.yuki-lab.com/ai/" class="project-link">オセロAI対戦</a>
+                  </div>
+                  <div class="project-description">アルファベータ法を用いたAIアルゴリズムを実装</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><img src="./image/reversi_icon.png" alt="アイコン" class="project-img"></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="./reversi-game/" class="project-link">リバーシWeb</a>
+                  </div>
+                  <div class="project-description">月間アクティブユーザー3万人の人気オセロゲーム。Claudeを用いることで、プロトタイプは1分で実装</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GPTsプロジェクト -->
+          <div class="group-section">
+            <div class="group-title">
+              <span class="badge badge-danger">注目</span>
+              GPTs
+            </div>
+            <div class="projects-grid">
+              <div class="project-item">
+                <div><img src="./image/taskai.webp" alt="タスク管理AIのロゴ" class="project-img"></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://chatgpt.com/g/g-8hmJanRZA-tasukuguan-li-ai/" class="project-link">タスク管理AI</a>
+                  </div>
+                  <div class="project-description">Google Calendar APIを活用したChatGPT連携タスク管理システム。本GPTs以外にも、いくつか人気のGPTsを公開</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 社会貢献・Webサイト -->
+          <div class="group-section">
+            <div class="group-title">
+              <span class="badge badge-info">社会起業</span>
+              <span class="badge badge-success">2022年〜</span>
+              Webサイト開発
+            </div>
+            <div class="projects-grid">
+              <div class="project-item">
+                <div class=""><img src="./image/niuniu.png" alt="協会のマスコットキャラクター" class="project-img"></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://dioden.org" class="project-link">一般社団法人ニューロダイバーシティ協会 公式サイト</a>
+                  </div>
+                  <div class="project-description">私が代表を務めている団体の公式ページ。マスコットキャラクターやファビコンは友人および協会メンバーの制作</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-book"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://dioden.org/wiki/" class="project-link">発達Wiki</a>
+                  </div>
+                  <div class="project-description">発達障害に関する情報共有プラットフォーム</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 開発ツール -->
+          <div class="group-section">
+            <div class="group-title">
+              <span class="badge badge-secondary">開発ツール</span>
+              <span class="badge badge-success">2021年〜</span>
+              ユーティリティ
+            </div>
+            <div class="projects-grid">
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-calculator"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/max-min3/" class="project-link">3次関数の最大最小値計算ツール</a>
+                  </div>
+                  <div class="project-description">数学の問題解決をサポート</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-code"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/regex/" class="project-link">正規表現に対応した文字列置換ツール</a>
+                  </div>
+                  <div class="project-description">高性能なテキスト検索・変換ツール</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-link"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/url_service/" class="project-link">日本語URLエンコードツール</a>
+                  </div>
+                  <div class="project-description">日本語のURLを、XなどのSNSでも使用可能な形式に変換します</div>
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-icon"><i class="fas fa-clock"></i></div>
+                <div class="project-content">
+                  <div class="project-title">
+                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/timer/" class="project-link">シンプルタイマー</a>
+                    <span class="badge badge-info" style="margin-left: 10px;">デビュー作</span>
+                  </div>
+                  <div class="project-description">コマンド操作可能でシンプルなタイマー。視覚障害があっても使いやすい</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- iOSアプリセクション -->
+      <div class="content-card">
+        <div class="card-header">
+          <h2>
+            <i class="fab fa-apple"></i>
+            モバイルアプリケーション
+          </h2>
+        </div>
+        <div class="card-body">
+          <p style="color: var(--text-light); margin-bottom: 30px; font-size: 1.1rem;">開発したiOS向けアプリケーション</p>
+          
+          <div class="projects-grid">
+            <div class="project-item">
+              <div class="project-icon"><img src="./image/senhana.png" alt="Senhanaのアイコン" class="project-img"></div>
+              <div class="project-content">
+                <div class="project-title">
+                  <span style="color: var(--text-light);">専門家の話が聞けるSNS・Senhana</span>
+                  <span class="badge badge-secondary" style="margin-left: 10px;">サービス終了</span>
+                </div>
+                <div class="project-description">
+                  中学校の新聞部部長として調査報道の重要性を感じたことをきっかけに、専門家に「取材」ができるSNSをiPhone・iPad向けに公開。Swiftを独学して開発し、国会議員の方への「取材」などを実現しました。<br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer id="footer"></footer>
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Yuki. All rights reserved.</p>
+        <p style="margin-top: 10px; opacity: 0.7;">Web Developer & Social Entrepreneur</p>
+      </div>
+    </footer>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>
-
-<!-- Yuki  生成日時: 2021/12/13 -->
