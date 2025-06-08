@@ -49,367 +49,6 @@
     <meta property="og:url" content="https://yuki-lab.com/">
     <meta property="og:site_name" content="yuki Portfolio">
     <meta name="twitter:card" content="summary" />
-
-    <style>
-      :root {
-        --primary-color: #4f46e5;
-        --secondary-color: #7c3aed;
-        --accent-color: #06b6d4;
-        --text-dark: #1f2937;
-        --text-light: #6b7280;
-        --bg-light: #f8fafc;
-        --white: #ffffff;
-        --border-color: #e5e7eb;
-        --shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        line-height: 1.7;
-        color: var(--text-dark);
-        background: var(--bg-light);
-        overflow-x: hidden;
-      }
-
-      .hero-section {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        color: white;
-        padding: 120px 0 80px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-        opacity: 0.1;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .hero-title {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 700;
-        margin-bottom: 20px;
-        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .hero-subtitle {
-        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        margin-bottom: 15px;
-        opacity: 0.9;
-        font-weight: 400;
-      }
-
-      .hero-description {
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
-        opacity: 0.8;
-        margin-bottom: 40px;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .btn-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 30px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .btn-primary {
-        background: white;
-        color: var(--primary-color);
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: white;
-        border-color: white;
-      }
-
-      .btn-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow);
-        text-decoration: none;
-      }
-
-      .btn-primary:hover {
-        color: var(--primary-color);
-      }
-
-      .btn-secondary:hover {
-        background: white;
-        color: var(--primary-color);
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .content-card {
-        background: var(--white);
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-        margin: 40px 0;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 1px solid var(--border-color);
-      }
-
-      .content-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .card-header {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        color: white;
-        padding: 30px;
-        position: relative;
-      }
-
-      .card-header h2 {
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .card-body {
-        padding: 40px;
-      }
-
-      .projects-grid {
-        display: grid;
-        gap: 25px;
-      }
-
-      .project-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 25px;
-        border-radius: 15px;
-        transition: all 0.3s ease;
-        border: 1px solid var(--border-color);
-        background: var(--white);
-      }
-
-      .project-item:hover {
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        transform: translateX(5px);
-        border-color: var(--accent-color);
-      }
-
-      .project-icon {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.3rem;
-        flex-shrink: 0;
-      }
-      .project-img {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-      }
-      .github-logo{
-        width: 20px;
-        height: 20px;
-        mask-image: url(./image/github.svg);
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-position: center;
-        background-color: #FFF;
-      }
-      #github-link:hover .github-logo{
-        background-color: var(--primary-color);
-      }
-
-      .project-content {
-        flex: 1;
-      }
-
-      .project-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: var(--text-dark);
-      }
-
-      .project-link {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-      }
-
-      .project-link:hover {
-        color: var(--secondary-color);
-        text-decoration: none;
-      }
-
-      .project-description {
-        color: var(--text-light);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-top: 5px;
-      }
-
-      .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 20px;
-      }
-
-      .badge {
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .badge-success { background: #10b981; color: white; }
-      .badge-danger { background: #ef4444; color: white; }
-      .badge-warning { background: #f59e0b; color: white; }
-      .badge-info { background: var(--accent-color); color: white; }
-      .badge-secondary { background: #6b7280; color: white; }
-
-      .profile-card {
-        background: var(--white);
-        border-radius: 20px;
-        padding: 50px;
-        margin: 40px 0;
-        box-shadow: var(--shadow);
-        text-align: center;
-        border: 1px solid var(--border-color);
-      }
-
-      .profile-text {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-dark);
-        margin-bottom: 30px;
-        text-align: left;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .social-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 24px;
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        color: white;
-        text-decoration: none;
-        border-radius: 25px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
-
-      .social-link:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow);
-        color: white;
-        text-decoration: none;
-      }
-
-      .group-section {
-        border-left: 3px solid var(--accent-color);
-        padding-left: 20px;
-        margin: 30px 0;
-      }
-
-      .group-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-      }
-
-      .footer {
-        background: var(--text-dark);
-        color: white;
-        text-align: center;
-        padding: 40px 0;
-        margin-top: 60px;
-      }
-
-      @media (max-width: 768px) {
-        .hero-section {
-          padding: 80px 0 60px;
-        }
-        
-        .card-body {
-          padding: 30px 20px;
-        }
-        
-        .profile-card {
-          padding: 30px 20px;
-        }
-        
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        .btn-cta {
-          width: 100%;
-          max-width: 300px;
-          justify-content: center;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- ヒーローセクション -->
@@ -425,7 +64,7 @@
             作品を見る
           </a>
           <a href="https://github.com/yuki-keio/" class="btn-cta btn-secondary" id="github-link">
-            <div alt="GitHubのアイコン" class="github-logo"></div>
+            <img src="./image/github.svg" alt="GitHubのアイコン" class="github-logo">
             GitHub
           </a>
         </div>
@@ -476,54 +115,44 @@
               ミニゲーム・AI
             </div>
             <div class="projects-grid">
-              <div class="project-item">
-                <div class="project-icon"><i class="fas fa-robot"></i></div>
+              <a href="https://neurodivergent.yuki-lab.com" class="project-item">
+                <div><img src="./image/niuniu.png" alt="発達AIのアイコン" class="project-img"></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://neurodivergent.yuki-lab.com" class="project-link">発達AI</a>
-                  </div>
+                  <div class="project-title">発達AI</div>
                   <div class="project-description">ニューロダイバージェントの当事者の1300個の経験則の独自データベースを踏まえ、チャットAIがアドバイスを生成</div>
                 </div>
-              </div>
-              <div class="project-item">
+              </a>
+              <a href="https://jumping.yuki-lab.com/" class="project-item">
                 <div class="project-icon"><i class="fas fa-gamepad"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://jumping.yuki-lab.com/" class="project-link">2Dアクションゲーム</a>
-                  </div>
+                  <div class="project-title">2Dアクションゲーム</div>
                   <div class="project-description">あなたは柴犬を操作し、虎に食べられないようゴールを目指します。良いスコアが取れたらSNSに投稿！</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="https://puzzle.yuki-lab.com/" class="project-item">
                 <div class="project-icon"><i class="fas fa-puzzle-piece"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://puzzle.yuki-lab.com/" class="project-link">パズルゲーム</a>
-                  </div>
+                  <div class="project-title">パズルゲーム</div>
                   <div class="project-description">シンプルなブロック消しパズル。AIエージェントを用いて作成</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="https://shogi.yuki-lab.com/" class="project-item">
                 <div class="project-icon"><img src="./image/shogi.png" alt="スマート将棋盤のアイコン" class="project-img"></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://shogi.yuki-lab.com/" class="project-link">スマート将棋盤</a>
-                  </div>
+                  <div class="project-title">スマート将棋盤</div>
                   <div class="project-description">将棋のルールを踏まえて動作するインテリジェントな将棋盤</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="https://number.yuki-lab.com/" class="project-item">
                 <div class="project-icon"><i class="fas fa-search"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://number.yuki-lab.com/" class="project-link">推理ゲーム</a>
-                  </div>
+                  <div class="project-title">推理ゲーム</div>
                   <div class="project-description">正解の数字を当てるゲーム</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -535,35 +164,29 @@
               人気Webゲーム
             </div>
             <div class="projects-grid">
-              <div class="project-item">
+              <a href="https://reversi.yuki-lab.com/online/" class="project-item">
                 <div class="project-icon"><i class="fas fa-circle"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://reversi.yuki-lab.com/online/" class="project-link">オセロ通信対戦</a>
-                  </div>
+                  <div class="project-title">オセロ通信対戦</div>
                   <div class="project-description">サーバーサイドの処理を実装し、リアルタイム通信対戦やオンライン対戦のマッチングを実現</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="https://reversi.yuki-lab.com/ai/" class="project-item">
                 <div class="project-icon"><i class="fas fa-robot"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://reversi.yuki-lab.com/ai/" class="project-link">オセロAI対戦</a>
-                  </div>
+                  <div class="project-title">オセロAI対戦</div>
                   <div class="project-description">アルファベータ法を用いたAIアルゴリズムを実装</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="./reversi-game/" class="project-item">
                 <div class="project-icon"><img src="./image/reversi_icon.png" alt="アイコン" class="project-img"></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="./reversi-game/" class="project-link">リバーシWeb</a>
-                  </div>
+                  <div class="project-title">リバーシWeb</div>
                   <div class="project-description">月間アクティブユーザー3万人の人気オセロゲーム。Claudeを用いることで、プロトタイプは1分で実装した。最新版ではDjangoやPostgreSQLを活用。</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -574,15 +197,13 @@
               GPTs
             </div>
             <div class="projects-grid">
-              <div class="project-item">
+              <a href="https://chatgpt.com/g/g-8hmJanRZA-tasukuguan-li-ai/" class="project-item">
                 <div><img src="./image/taskai.webp" alt="タスク管理AIのロゴ" class="project-img"></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://chatgpt.com/g/g-8hmJanRZA-tasukuguan-li-ai/" class="project-link">タスク管理AI</a>
-                  </div>
+                  <div class="project-title">タスク管理AI</div>
                   <div class="project-description">Google Calendar APIを活用したChatGPT連携タスク管理システム。本GPTs以外にも、いくつか人気のGPTsを公開</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -594,25 +215,23 @@
               Webサイト開発
             </div>
             <div class="projects-grid">
-              <div class="project-item">
-                <div class=""><img src="./image/niuniu.png" alt="協会のマスコットキャラクター" class="project-img"></div>
+              <a href="https://dioden.org" class="project-item">
+                <div class=""><img src="./image/dioden.png" alt="協会のマスコットキャラクター" class="project-img"></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://dioden.org" class="project-link">一般社団法人ニューロダイバーシティ協会 公式サイト</a>
-                  </div>
+                  <div class="project-title">一般社団法人ニューロダイバーシティ協会 公式サイト</div>
                   <div class="project-description">私が代表を務めている団体の公式ページ。マスコットキャラクターやファビコンは友人および協会メンバーの制作</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
-                <div class="project-icon"><i class="fas fa-book"></i></div>
+              <a href="https://dioden.org/wiki/" class="project-item">
+                <div>
+                <img src="./image/wiki.png" alt="発達Wikiのアイコン" class="project-img">
+                </div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://dioden.org/wiki/" class="project-link">発達Wiki</a>
-                  </div>
+                  <div class="project-title">発達Wiki</div>
                   <div class="project-description">発達障害に関する情報共有プラットフォーム</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -624,46 +243,40 @@
               ユーティリティ
             </div>
             <div class="projects-grid">
-              <div class="project-item">
+              <a href="https://web.sfc.keio.ac.jp/~t21055yi/max-min3/" class="project-item">
                 <div class="project-icon"><i class="fas fa-calculator"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/max-min3/" class="project-link">3次関数の最大最小値計算ツール</a>
-                  </div>
+                  <div class="project-title">3次関数の最大最小値計算ツール</div>
                   <div class="project-description">数学の問題解決をサポート</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="https://web.sfc.keio.ac.jp/~t21055yi/regex/" class="project-item">
                 <div class="project-icon"><i class="fas fa-code"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/regex/" class="project-link">正規表現に対応した文字列置換ツール</a>
-                  </div>
+                  <div class="project-title">正規表現に対応した文字列置換ツール</div>
                   <div class="project-description">高性能なテキスト検索・変換ツール</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="https://web.sfc.keio.ac.jp/~t21055yi/url_service/" class="project-item">
                 <div class="project-icon"><i class="fas fa-link"></i></div>
                 <div class="project-content">
-                  <div class="project-title">
-                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/url_service/" class="project-link">日本語URLエンコードツール</a>
-                  </div>
+                  <div class="project-title">日本語URLエンコードツール</div>
                   <div class="project-description">日本語のURLを、XなどのSNSでも使用可能な形式に変換します</div>
                 </div>
-              </div>
+              </a>
               
-              <div class="project-item">
+              <a href="https://web.sfc.keio.ac.jp/~t21055yi/timer/" class="project-item">
                 <div class="project-icon"><i class="fas fa-clock"></i></div>
                 <div class="project-content">
                   <div class="project-title">
-                    <a href="https://web.sfc.keio.ac.jp/~t21055yi/timer/" class="project-link">シンプルタイマー</a>
+                    シンプルタイマー
                     <span class="badge badge-info" style="margin-left: 10px;">デビュー作</span>
                   </div>
                   <div class="project-description">コマンド操作可能でシンプルなタイマー。視覚障害があっても使いやすい</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -681,7 +294,7 @@
           <p style="color: var(--text-light); margin-bottom: 30px; font-size: 1.1rem;">開発したiOS向けアプリケーション</p>
           
           <div class="projects-grid">
-            <div class="project-item">
+            <div class="project-item" style="cursor: default;">
               <div class="project-icon"><img src="./image/senhana.png" alt="Senhanaのアイコン" class="project-img"></div>
               <div class="project-content">
                 <div class="project-title">
