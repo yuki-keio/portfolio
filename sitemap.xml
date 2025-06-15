@@ -32,4 +32,14 @@
   <loc>https://number.yuki-lab.com/</loc>
   <priority>0.8</priority>
 </url>
+<url>
+  <loc>https://regex-replacement.yuki-lab.com/</loc>
+  <priority>0.8</priority>
+</url>
+encode-url.yuki-lab.com
+
+<url>
+  <loc>https://encode-url.yuki-lab.com/</loc>
+  <priority>0.8</priority>
+</url>
 </urlset>
