@@ -215,6 +215,10 @@ display: inline-block;
   border-radius: 12px;
   object-fit:contain;
 }
+#chessImg{
+  width:35px;
+  height:35px;
+}
 .github-logo{
   width: 20px;
   height: 20px;
