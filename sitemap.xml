@@ -23,7 +23,7 @@
 </url>
 <url>
   <loc>https://neurodivergent.yuki-lab.com/</loc>
-  <priority>0.8</priority>
+  <priority>0.3</priority>
 </url>
 <url>
   <loc>https://shogi.yuki-lab.com/</loc>
@@ -51,11 +51,11 @@
 </url>
 <url>
   <loc>https://puzzle.yuki-lab.com/</loc>
-  <priority>0.5</priority>
+  <priority>0.3</priority>
 </url>
 <url>
   <loc>https://number.yuki-lab.com/</loc>
-  <priority>0.5</priority>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>https://regex-replacement.yuki-lab.com/</loc>
@@ -67,7 +67,7 @@
 </url>
 <url>
   <loc>https://timer.yuki-lab.com/</loc>
-  <priority>0.7</priority>
+  <priority>0.5</priority>
 </url>
 <url>
   <loc>https://birthday.yuki-lab.com/</loc>
