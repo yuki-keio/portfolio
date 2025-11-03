@@ -392,10 +392,7 @@ color: white;
 }
 
 .reversi-section {
-  cursor: default;
-  border: none;
-  padding: 25px;
-  background: transparent;
+  border: 1px solid #00a90b;
 }
 
 .reversi-links-container {
