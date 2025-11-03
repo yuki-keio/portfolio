@@ -215,7 +215,7 @@ display: inline-block;
   border-radius: 12px;
   object-fit:contain;
 }
-#chessImg{
+#chessImg,#pinballImg{
   width:35px;
   height:35px;
   margin:0 7.5px;
