@@ -1,14 +1,19 @@
 :root {
-  --primary-color: #4f46e5;
-  --secondary-color: #7c3aed;
-  --accent-color: #06b6d4;
+  --primary-color: #006f46;
+  --secondary-color: #006842;
+  --third-color: #00b475;
+  --forth-color: #002fc9;
+  --fifth-color: #17a6e3;
+  --sixth-color: #003cff;
+  --accent-color: #2dbed4;
+  --accent-second-color: #2dbed4c8;
   --text-dark: #1f2937;
   --text-light: #6b7280;
   --bg-light: #f8fafc;
   --white: #ffffff;
-  --border-color: #e5e7eb;
-  --shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --border-color: #d4d4d4;
+  --shadow: 0 10px 25px -3px rgba(13, 148, 136, 0.15), 0 4px 6px -2px rgba(13, 148, 136, 0.1);
+  --shadow-lg: 0 25px 50px -12px rgba(15, 118, 110, 0.3);
 }
 
 * {
@@ -29,12 +34,16 @@ h2,
 h3,
 h4 {
 font-family: sans-serif;
-border-bottom: 1px solid rgb(176, 176, 176);
 padding:0px 5px;
 display: inline-block;
 }
+
+#intro-me{
+border-bottom: 1px solid rgb(176, 176, 176);
+}
+
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--third-color) 0%, var(--forth-color) 100%);
   color: white;
   padding: 120px 0 80px;
   position: relative;
@@ -118,6 +127,7 @@ display: inline-block;
   transform: translateY(-2px);
   box-shadow: var(--shadow);
   text-decoration: none;
+  border-color: transparent;
 }
 
 .btn-primary:hover {
@@ -126,7 +136,8 @@ display: inline-block;
 
 .btn-secondary:hover {
   background: white;
-  color: var(--primary-color);
+  color: black;
+  border-color:white;
 }
 
 .container {
@@ -151,7 +162,7 @@ display: inline-block;
 }
 
 .card-header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--forth-color) 0%, var(--fifth-color) 100%);
   color: white;
   padding: 30px;
   position: relative;
@@ -182,11 +193,15 @@ display: inline-block;
   padding: 25px;
   border-radius: 15px;
   transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  border: 1.2px solid var(--accent-second-color);
   background: var(--white);
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+#senhanaProject{
+  border: 1.2px solid var(--border-color);
 }
 
 .project-item:hover {
@@ -236,7 +251,10 @@ display: inline-block;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--text-dark);
+  color: var(--forth-color);
+}
+.project-item:hover .project-title {
+  color: var(--sixth-color);
 }
 
 .project-link {
@@ -258,12 +276,6 @@ display: inline-block;
   margin-top: 5px;
 }
 
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
 
 .badge {
   padding: 6px 12px;
@@ -272,13 +284,15 @@ display: inline-block;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  transform: translate(-3px, -3px);
+  display: inline-block;
 }
 
 .badge-success { background: #10b981; color: white; }
 .badge-danger { background: #ef4444; color: white; }
 .badge-warning { background: #f59e0b; color: white; }
 .badge-info { background: var(--accent-color); color: white; }
-.badge-secondary { background: #6b7280; color: white; }
+.badge-secondary { background: #363636; color: white; }
 
 .profile-card {
   background: var(--white);
@@ -305,12 +319,12 @@ display: inline-block;
   flex-wrap: wrap;
 }
 
-.social-link {
+#jna-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--third-color) 100%);
   color: white;
   text-decoration: none;
   border-radius: 25px;
@@ -318,7 +332,7 @@ display: inline-block;
   transition: all 0.3s ease;
 }
 
-.social-link:hover {
+.jna-link:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
   color: white;
@@ -331,10 +345,14 @@ display: inline-block;
   margin: 30px 0;
 }
 
+#reversiGroup{
+  border-left: 3px solid #00a90b !important;
+}
+
 .group-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: black;
   margin-bottom: 15px;
 }
 
@@ -425,4 +443,24 @@ color: white;
   color: white;
   text-decoration: none;
   background: linear-gradient(135deg, #009c10 0%, #00850e 100%);
+}
+
+#github-link-second{
+  background-color: rgb(65, 65, 65);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#github-link-second:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  color: white;
+  text-decoration: none;
 }
