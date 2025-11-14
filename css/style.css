@@ -230,7 +230,7 @@ border-bottom: 1px solid rgb(176, 176, 176);
   border-radius: 12px;
   object-fit:contain;
 }
-#chessImg,#pinballImg{
+#chessImg,#pinballImg,#countImg{
   width:35px;
   height:35px;
   margin:0 7.5px;
