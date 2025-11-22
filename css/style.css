@@ -420,9 +420,7 @@ color: white;
   display: flex;
   gap: 15px;
   margin-top: 20px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: wrap;
 }
 
 .reversi-link-btn {
