@@ -45,6 +45,8 @@
             margin-bottom: 3px;
             font-size: 15px;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
         }
         .ratings {
             display: flex;
@@ -74,6 +76,8 @@
             font-weight: bold;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         .appUrl:hover {
             background-image: linear-gradient(to right, #28a745, #28a745);
@@ -212,6 +216,8 @@
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         .start:hover {
             background-image: linear-gradient(to right, #28a745, #28a745);
@@ -229,23 +235,6 @@
             text-decoration: none;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("get_url").addEventListener("click", function() {
-                const url = "https://reversi.yuki-lab.com"; 
-                window.open(url, "_blank");
-            });
-            document.getElementById("developer").addEventListener("click", function() {
-                const url = "https://yuki-lab.com"; 
-                window.open(url, "_blank");
-            });
-            document.getElementById("play_othello").addEventListener("click", function() {
-                const url = "https://reversi.yuki-lab.com"; 
-                window.open(url, "_blank");
-            });
-        });
-
-    </script>
 </head>
 <body>
     <div class="container">
@@ -254,13 +243,13 @@
             <img id="icon" src="../image/reversi_icon.png" alt="アプリのアイコン">
             <div class="app-info">
                 <h1>リバーシWeb</h1>
-                <div id="developer">開発元: Yuki-Lab</div>
+                <a id="developer" href="https://yuki-lab.com" target="_blank" rel="noopener">開発元: Yuki-Lab</a>
                 <div class="ratings">
                     <div class="stars">★★★★★</div>
                     <div class="reviews">5.0 (2件の評価)</div>
                 </div>
-                <button class="appUrl" id="get_url">スタート
-                </button>
+                <a class="appUrl" id="get_url" href="https://reversi.yuki-lab.com" target="_blank" rel="noopener">スタート
+                </a>
             </div>
         </header>
         <hr>
@@ -326,12 +315,12 @@
                     <div class="reviewer">匿名ユーザー</div>
                     <div class="review-date">2025年4月1日</div>
                 </div>
-                <div class="review-stars">★★★★★</div>
-                <p>今までのWeb上のオセロの中でも特に優れていると感じました。過不足なく欲しい機能が付いておりオセロに集中できます。さすがsfcです。
-                </p>
+            <div class="review-stars">★★★★★</div>
+            <p>今までのWeb上のオセロの中でも特に優れていると感じました。過不足なく欲しい機能が付いておりオセロに集中できます。さすがsfcです。
+            </p>
             </div>
         </div>
-        <div class="start" id="play_othello">🎮️ オセロで遊ぶ</div>
+        <a class="start" id="play_othello" href="https://reversi.yuki-lab.com" target="_blank" rel="noopener">🎮️ オセロで遊ぶ</a>
 
         <footer>
             <!--特定商取引法に基づく表記のurl-->
