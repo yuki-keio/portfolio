@@ -52,6 +52,13 @@ h2#creatives{
   color: var(--text-dark);
 }
 
+.explain{
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-dark);
+  text-align: center;
+}
+
 .hero-section {
   background: linear-gradient(135deg, var(--third-color) 0%, var(--forth-color) 100%);
   color: white;
