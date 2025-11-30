@@ -57,6 +57,11 @@ border-bottom: 1px solid rgb(176, 176, 176);
   vertical-align: middle;
 }
 
+.nd-icon{
+  width: 20px;
+  height: 20px;
+}
+
 .section-header{
   width: 100%;
   text-align: center;
