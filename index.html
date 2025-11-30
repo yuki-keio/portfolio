@@ -20,10 +20,6 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/faf01160aa.js" crossorigin="anonymous"></script>
     <link rel="canonical" href="https://yuki-lab.com/" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <script type="text/javascript" src="jl/jquery-3.6.0.min.js"></script>
-
     <link rel="apple-touch-icon" type="image/png" href="image/icon/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/icon/icon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="image/icon/icon-32x32.png">
@@ -52,7 +48,7 @@
         
         <div class="cta-buttons">
           <a href="#creatives" class="btn-cta btn-secondary">
-            <i class="fas fa-code"></i>
+            <img src="./image/code.svg" alt="コードのアイコン" class="code-icon" id="cta-code">
             制作物
           </a>
           <a href="https://github.com/yuki-keio/" class="btn-cta btn-secondary" id="github-link">
@@ -88,7 +84,7 @@
         </div>
       </div>
       <div class="section-header">
-        <h2 id="creatives"><small><i class="fas fa-code"></i></small> 制作物</h2>
+        <h2 id="creatives"><small><img src="./image/code.svg" alt="コードのアイコン" class="code-icon code-black"></small> 制作物</h2>
       </div>
       
       <!-- Webサービスセクション -->
@@ -101,7 +97,7 @@
         </div>
         <div class="card-body">
           <p class="explain">「Yuki Lab」ブランドで無料のWebゲームやツールを開発・提供しています。</p>
-          <p style="color: var(--sixth-color); margin-bottom: 13px;font-size: 1.1rem; font-weight:bold">人気 + おすすめランキング</p>
+          <p style="color: var(--sixth-color); margin: 13px 0;font-size: 1.1rem; font-weight:bold">人気 + おすすめランキング</p>
           <div class="projects-grid">
             <!-- 1位 リバーシWeb -->
             <div id="reversi-link-section" class="project-item reversi-section" onclick="window.location.href='https://yuki-lab.com/reversi-game/'">
@@ -203,7 +199,7 @@
             </a>
 
             <a href="https://regex-replacement.yuki-lab.com" class="project-item">
-                <div class="project-icon"><i class="fas fa-code"></i></div>
+                <div class="project-icon"><img src="./image/code.svg" alt="コードのアイコン" class="code-icon"></div>
                 <div class="project-content">
                   <div class="project-title">正規表現に対応の文字列置換ツール</div>
                   <div class="project-description">正規表現やマクロによる柔軟な文字列検索・置換をシンプルなUXで実現しています。</div>
@@ -326,13 +322,11 @@
       </div>
     </main>
 
-    <footer class="footer">
+  <footer class="footer">
       <div class="container">
         <p>&copy; 2025 Yuki. All rights reserved.</p>
         <p style="margin-top: 10px; opacity: 0.7;">Web Developer & Social Entrepreneur</p>
       </div>
     </footer>
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>

@@ -9,6 +9,3 @@ package-lock.json
 # OSの不要なファイル
 .DS_Store
 Thumbs.db
-
-# MDBootstrap のビルド関連
-.mdb/

@@ -38,6 +38,16 @@ padding:0px 5px;
 display: inline-block;
 }
 
+.code-icon{
+height:20px;
+}
+.code-black{
+  filter: invert(1);
+}
+.btn-cta:hover #cta-code{
+  filter: invert(1);
+}
+
 #intro-me{
 border-bottom: 1px solid rgb(176, 176, 176);
 }
@@ -294,7 +304,7 @@ h2#creatives{
 
 
 .badge {
-  padding: 6px 12px;
+  padding: 3px 14px;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
