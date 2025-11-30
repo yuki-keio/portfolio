@@ -51,6 +51,11 @@ height:20px;
 #intro-me{
 border-bottom: 1px solid rgb(176, 176, 176);
 }
+.user-icon{
+  width: 31px;
+  height: 31px;
+  vertical-align: middle;
+}
 
 .section-header{
   width: 100%;
