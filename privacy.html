@@ -1,50 +1,379 @@
 <!DOCTYPE html>
-<!--! adsenseのプライバシーとメッセージの欧州の規制ページの下書きからリンクあり-->
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; padding: 20px; }
-        h1, h2 { color: #007508; }
-        a { color: #007508; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | Yuki Lab</title>
+  <meta name="description" content="yuki-lab.com および関連サービスのプライバシーポリシーです。取得する情報、利用目的、第三者提供、安全管理措置、開示請求・お問い合わせ方法などを定めています。">
+  <link rel="canonical" href="https://yuki-lab.com/privacy.html">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #4b5563;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --line: #e5e7eb;
+      --shadow: 0 18px 50px rgba(12, 42, 92, 0.08);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", "Hiragino Sans", "BIZ UDGothic", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.4; letter-spacing: 0.02em; }
+    p { margin: 0 0 14px; color: var(--muted); }
+    ul { margin: 0 0 14px 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .page-hero {
+      background: linear-gradient(120deg, #0f766e 0%, #1d4ed8 100%);
+      color: #fff;
+      padding: 68px 16px 54px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 35%),
+                  radial-gradient(circle at 80% 10%, rgba(255,255,255,0.18), transparent 32%),
+                  radial-gradient(circle at 60% 70%, rgba(255,255,255,0.12), transparent 36%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 1040px; margin: 0 auto; z-index: 1; }
+
+    .page-hero h1 { font-size: clamp(2.1rem, 3vw, 2.6rem); margin-bottom: 10px; }
+    .lede {
+      font-size: 1.04rem;
+      max-width: 760px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 18px;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: #f8fafc;
+      backdrop-filter: blur(3px);
+    }
+    .page {
+      max-width: 1080px;
+      margin: -26px auto 60px;
+      padding: 0 16px 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+    .card h2 { font-size: 1.25rem; color: var(--ink); }
+    .section-lead { margin-bottom: 14px; font-weight: 600; color: #111827; }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+    .two-col { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f9fbff;
+    }
+    .item h3 { font-size: 1.05rem; margin-bottom: 8px; color: #0f172a; }
+    .note {
+      padding: 12px 14px;
+      background: #ecfeff;
+      color: var(--muted);
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+    .table-wrap { overflow-x: auto; margin-top: 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 12px 12px;
+      text-align: left;
+      vertical-align: top;
+      color: var(--muted);
+      min-width: 200px;
+    }
+    th { background: #eff4ff; color: #0f172a; font-weight: 700; }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: #e0f2fe;
+      color: #0b5394;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+    .toc { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); padding: 20px 18px; margin-bottom: 18px; }
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .toc a {
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #eef2ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+    .toc a:hover { background: #e0e7ff; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid var(--line);
+      color: #0f172a;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .list-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .list-columns ul { margin-left: 16px; }
+    @media (max-width: 768px) {
+      .page { margin-top: -18px; }
+      table { min-width: 100%; }
+      th, td { font-size: 0.95rem; }
+      .pill { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: 2025/2/14</p>
-    
-    <h2>1. Introduction</h2>
-    <p>Welcome to <strong>yuki-lab.com</strong>. This Privacy Policy explains how we collect, use, and protect your personal data when using our website and services, including Google AdSense advertising.</p>
-    
-    <h2>2. Data Collection</h2>
-    <p>We do not store or process any personal data related to Google AdSense advertising. All ad personalization and data collection are managed directly by Google.</p>
-    
-    <h2>3. Use of Data</h2>
-    <p>All data related to advertising on this site is managed by Google AdSense. For details on how Google collects and processes data, please refer to Google’s Privacy Policy.</p>
-    
-    <h2>4. Google AdSense and GDPR Compliance</h2>
-    <p>In compliance with GDPR, users from the EEA, UK, and Switzerland will be asked for consent before personal data is collected for ad targeting. We use Google's default GDPR consent management system.</p>
-    <p>You can manage your ad preferences and consent settings through Google's Ad Privacy settings:</p>
-    <ul>
-        <li><a href="https://adssettings.google.com/">Google Ad Personalization Settings</a></li>
-        <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
-    </ul>
-    
-    <h2>5. Data Protection and User Rights</h2>
-    <p>If you wish to request access, modification, or deletion of your advertising data, please visit Google's Privacy Policy and Data Management page:</p>
-    <ul>
-        <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
-        <li><a href="https://adssettings.google.com/">Ad Personalization Settings</a></li>
-        <li><a href="https://support.google.com/accounts/answer/61177">Google Data Deletion Request</a></li>
-    </ul>
-    
-    <h2>6. Third-Party Services</h2>
-    <p>Our site may contain links to third-party services, including Google AdSense. We are not responsible for their privacy policies.</p>
-    
-    <h2>7. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+  <header class="page-hero">
+    <div class="hero-inner">
+      <h1>プライバシーポリシー</h1>
+      <p class="lede">
+        お客様の個人情報について、次のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。本ポリシーで使用する用語の意味は、個人情報の保護に関する法律（以下「個人情報保護法」といいます。）に準拠します。
+      </p>
+      <div class="meta-row">
+        <span class="pill">最終更新日：2025年12月2日</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="toc">
+      <h2>目次</h2>
+      <div class="toc-links">
+        <a href="#policy">基本方針</a>
+        <a href="#data">取得する情報</a>
+        <a href="#purpose">利用目的</a>
+        <a href="#services">各サービス特有の情報</a>
+        <a href="#third-party">第三者提供</a>
+        <a href="#security">安全管理措置</a>
+        <a href="#rights">開示等の請求</a>
+        <a href="#eu">EU/EEA の方へ</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+    </section>
+
+    <section id="policy" class="card">
+      <h2>第一条 基本方針と適用範囲</h2>
+      <p>
+        yuki-lab.com およびそのサブドメイン（例：reversi.yuki-lab.com、shogi.yuki-lab.com、4137game.yuki-lab.com、count.yuki-lab.com など）を運営する Yuki Lab（以下「当方」）は、個人情報の適切な取り扱いのため、お客様の個人情報について次のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。</p>
+      <p>なお、本ポリシーで使用する用語の意味は、個人情報保護法に準拠します。</p>
+    </section>
+
+    <section id="data" class="card">
+      <h2>第二条 取得する情報</h2>
+      <div class="grid two-col">
+        <div class="item">
+          <h3>お客様からご提供いただく情報</h3>
+          <ul>
+            <li>一部サービス（<a href="https://reversi.yuki-lab.com">リバーシWeb</a>を含みますがこれに限定されません）において、任意のアカウント登録機能で入力されたメールアドレス、パスワードなど。</li>
+            <li>一部サービス（<a href="https://reversi.yuki-lab.com">リバーシWeb</a>を含みますがこれに限定されません）において、課金に必要な情報。ただし、クレジットカード情報は決済事業者 Stripe に保存され、当方はカード番号等を閲覧できません。当方は取引履歴の概要を Stripe 管理画面で確認できます。</li>
+            <li>当方のお問い合わせフォームにご入力いただいた内容。</li>
+            <li>その他、お客様が当方に提供する情報。</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>サービス利用時に自動的に取得される情報</h3>
+          <ul>
+            <li>Google Analytics や Microsoft Clarity 等による行動データ（ページ閲覧情報、クリック情報など）。</li>
+            <li>Google AdSense による広告配信関連の情報（広告表示回数、計測用クッキー等）。</li>
+            <li>その他、自動的に取得されたデータ。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="purpose" class="card">
+      <h2>第三条 利用目的</h2>
+      <p class="section-lead">個人情報保護法に基づき、取得した情報は以下のような目的で利用する場合があります。</p>
+      <div class="list-columns">
+        <div>
+          <ul>
+            <li>アカウントの作成・認証、およびアカウントを利用した機能の提供。</li>
+            <li>課金・サブスクリプションの管理、決済処理、決済に関する重要な連絡。決済を利用した機能の提供。</li>
+            <li>お問い合わせへの対応。</li>
+            <li>各種のお知らせの送信。</li>
+            <li>不正行為の防止。</li>
+            <li>Google Analytics / Microsoft Clarity 等によるユーザビリティ改善、機能改善のための分析。</li>
+            <li>Google AdSense 等による広告配信・効果測定・不正防止。</li>
+            <li>システムの保守、セキュリティ対策、トラブル対応。</li>
+            <li>法令遵守および権利行使・防御のため。</li>
+            <li>その他、サービスの適切な運営と改善のため。</li>
+          </ul>
+        </div>
+      </div>
+      <p>利用目的の通知・開示に関する法令に基づく請求があった場合には、法令に基づく一部例外を除き、遅滞なく対応します（後述の手数料を承ります）。</p>
+    </section>
+
+    <section id="services" class="card">
+      <h2>第四条 各サービスにおいて取り扱う主な情報</h2>
+      <p class="section-lead">各サービスで利用する主な外部サービスと関連する情報は次のとおりです。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>対象サービス</th>
+              <th>利用する主な外部サービス</th>
+              <th>関連する情報</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div>リバーシWeb <br>（他言語版を含む）</div>
+                <div class="badge">reversi.yuki-lab.comなど</div>
+              </td>
+              <td>Google AdSense、Google Analytics、Microsoft Clarity、Stripe（決済）、Heroku Postgres など</td>
+              <td>広告配信に関連する情報、利用状況データ、決済に関する情報、任意登録アカウントのメールアドレス・パスワードおよびその他のアカウントに関連付けられた情報。</td>
+            </tr>
+            <tr>
+              <td>
+                <div>将棋Web</div>
+                <div class="badge">shogi.yuki-lab.com</div>
+              </td>
+              <td>Google AdSense、Google Analytics</td>
+              <td>広告配信に関連する情報、利用状況データなど。</td>
+            </tr>
+            <tr>
+              <td>
+                <div>文字数カウンター等、一部サイト</div>
+                <div class="badge">count.yuki-lab.com 他</div>
+              </td>
+              <td>Google AdSense、Google Analytics などを利用する場合があります</td>
+              <td>広告配信に関連する情報、利用状況データなどを利用する場合があります。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">上記以外のサブドメインでも第三条に掲げる目的で外部ツールを利用する場合があります。</p>
+    </section>
+
+    <section id="third-party" class="card">
+      <h2>第五条 第三者提供</h2>
+      <ul>
+        <li>Google（Analytics、AdSense、Tag Manager など）、Microsoft（Clarity）、Stripe などの提供先に、各サービスの利用状況データや決済処理に必要な情報が送信されることがあります。</li>
+        <li>決済に際し、クレジットカード情報は Stripe に直接送信・保存され、当方はカード番号等を取得・閲覧しません。</li>
+        <li>法令の遵守のために必要な場合や人の生命・財産の保護のために必要な場合、法令に基づき第三者に提供することがあります。</li>
+        <li>第三者提供記録については、法令に基づく請求があった場合に開示します（後述の手数料を承ります）。</li>
+      </ul>
+    </section>
+
+    <section id="security" class="card">
+      <h2>第六条 安全管理のために講じる措置</h2>
+      <ul>
+        <li>Google、Microsoft、Stripe など実績のあるプロバイダーを選定し、必要に応じて適切な設定を心がけています。</li>
+        <li>アクセス制御やHTTPSの利用など複数のセキュリティ施策を実施しています。セキュリティの観点から詳細は公開できません。ただし、法令に基づき開示が必要な場合はこの限りではありません。</li>
+      </ul>
+    </section>
+
+    <section id="rights" class="card">
+      <h2>第七条 開示等の請求</h2>
+      <p>個人情報保護法上の「開示等（利用目的の通知、保有個人データまたは第三者提供記録の開示、訂正・追加・削除、利用停止・第三者提供の停止）」の請求、及びその他の法令に基づく請求に対し、本ポリシーに定める例外を除き遅滞なく対応します。</p>
+      <ul>
+        <li>請求方法：<a href="https://forms.gle/QW8rR4VGaCEgBeVy6">こちらのフォーム</a>からご連絡ください。本人確認のため、必要書類の提出をお願いする場合があります。</li>
+        <li>手数料：1件につき 2,000円（税込）。請求に応じられない場合も、事務手数料として同額を申し受けます。</li>
+        <li>例外：法令に基づく例外事由に該当する場合は、全部または一部について開示・利用停止等に応じられないことがあります。</li>
+        <li>回答方法：合理的な範囲で速やかに対応します。</li>
+        <li>ただし、法令による別途の規定がある場合はこの限りではありません。</li>
+      </ul>
+    </section>
+
+    <section id="name-address" class="card">
+      <h2>第八条 運営者の氏名・住所の開示</h2>
+      <p>個人開発のため安全管理上の都合で、下記のフォームから請求があった後に遅滞なく開示します。</p>
+      <ul>
+        <li>運営者の氏名については、<a href="https://forms.gle/Cfj2WYmhBqmzXHr5A">こちらのフォーム</a>から請求があった場合に遅滞なく開示します。</li>
+        <li>運営者の住所については、<a href="https://forms.gle/y3RrfWXQdhpAABer5">こちらのフォーム</a>から請求があった場合に遅滞なく開示します。</li>
+      </ul>
+    </section>
+
+    <section id="cookies" class="card">
+      <h2>第九条 クッキー等の利用</h2>
+      <ul>
+        <li>Google Analytics、Google AdSense、Microsoft Clarity 等でクッキーや類似の技術を利用し、利用状況の計測や広告配信を行う場合があります。</li>
+        <li>ブラウザ設定でクッキーを無効化できますが、一部機能が正しく動作しない場合があります。</li>
+        <li>広告・計測の詳細やオプトアウト方法は、各外部ツールのポリシーやオプトアウトアドオンをご確認ください。</li>
+      </ul>
+    </section>
+
+    <section id="eu" class="card">
+      <h2>第十条 EU/EEA・英国居住者の方へ</h2>
+      <ul>
+        <li>当方は、EU一般データ保護規則（GDPR）および英国のデータ保護法に基づく追加の権利を尊重します。</li>
+        <li>EU/EEA・英国居住者の方は、法令に基づく個人情報の処理に関する同意の撤回、データポータビリティの請求、処理制限の要求、苦情申し立てなどの権利を有します。</li>
+        <li>法令に基づく権利を行使する場合は、<a href="https://forms.gle/QW8rR4VGaCEgBeVy6">こちらのフォーム</a>からご連絡ください。</li>
+        <li>EU/EEA・英国居住者の方の個人情報は、必要に応じてEU/EEA・英国外に転送されることがありますが、適切な保護措置を講じます。</li>
+        <li>ただし、法令に基づく別途の規定がある場合はこの限りではありません。</li>
+      </ul>
+    </section>
+
+    <section id="revision" class="card">
+      <h2>第十一条 改定</h2>
+      <p>本ポリシーの内容は、法令やサービス内容の変更に伴い改定することがあります。重要な変更がある場合は、本ページでの掲示やサービス内での告知によりお知らせします。</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>第十二条 お問い合わせ・相談窓口</h2>
+      <p>
+        個人情報の取扱いに関するご相談・苦情については、お手数をおかけいたしますが、<a href="https://forms.gle/BU8gCA7TpPmRZAzH9">こちらのフォーム</a>より「お問い合わせの種類」で「個人情報のお取り扱いについてのご相談・苦情」を選択の上、ご連絡ください。
+      </p>
+    </section>
+  </main>
 </body>
 </html>
