@@ -54,6 +54,11 @@ h2#creatives{
 }
 
 #reversi_main{
+  text-decoration: none;
+  color: inherit;
+}
+#reversi_main::after{
+  content: "";
   position: absolute;
   inset:0;
 }
@@ -191,6 +196,7 @@ h2#creatives{
   letter-spacing: 0.5px;
   transform: translate(-3px, -3px);
   display: inline-block;
+  margin-right:1px;
 }
 
 .badge-danger { background: #dd0000; color: white; }
@@ -284,10 +290,10 @@ color: white;
 #reversi_info{
   z-index: 1;
   position: absolute;
-  top: 23px;
-  right: 27px;
-  height: 21px;
-  width: 21px;
+  top: 20px;
+  right: 10px;
+  height: 39px;
+  width: 19px;
 }
 
 #reversi_info img{
