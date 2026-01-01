@@ -244,11 +244,12 @@ h2#creatives{
   margin-top: 60px;
 }
 .footer a {
-  color: white;
   text-decoration: underline;
+  color: rgb(232, 234, 235);
+  font-size: .8rem;
 }
 .footer a:hover {
-  color: #e5e7eb;
+  color: rgb(168, 187, 216);
 }
 
 @media (max-width: 768px) {
