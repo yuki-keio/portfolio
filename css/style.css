@@ -1,18 +1,24 @@
-.code-black{
-  filter: invert(1);
-}
-.btn-cta:hover #cta-code{
-  filter: invert(1);
+.content-tab:hover:not(.active) {
+  background: rgba(0, 47, 201, 0.05);
 }
 
-.section-header{
-  width: 100%;
-  text-align: center;
+.content-tab.active:hover {
+  box-shadow: 0 6px 20px rgba(0, 47, 201, 0.35);
 }
-h2#creatives{
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgb(176, 176, 176);
-  color: var(--text-dark);
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .explain{
@@ -20,33 +26,6 @@ h2#creatives{
   line-height: 1.4;
   color: var(--text-dark);
   text-align: center;
-}
-
-.btn-cta {
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: white;
-  color: var(--primary-color);
-}
-
-
-.btn-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  border-color: transparent;
-}
-
-.btn-primary:hover {
-  color: var(--primary-color);
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: black;
-  border-color:white;
 }
 
 #reversi-link-section{
