@@ -1,6 +1,12 @@
 [build]
   functions = "netlify/functions"
 
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = false
+
 [[redirects]]
   from = "/sitemap.xml"
   to = "/.netlify/functions/generate-sitemap"
