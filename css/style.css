@@ -174,3 +174,32 @@ color: white;
   color: white;
   text-decoration: none;
 }
+
+/* Tech Details - 使用技術補足セクション */
+.tech-details {
+  margin-top: 12px;
+  padding: 7px 16px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  z-index: 1;
+  position: relative;
+  cursor: default;
+}
+.project-item:not(:hover) .tech-details{
+  background: linear-gradient(-15deg, #f6f6f6 0%, #eaeaea 100%);
+}
+
+.project-item:hover .tech-details{
+  background: linear-gradient(-15deg, #f6f6f66c 0%, #eaeaea6c 100%);
+}
+
+.tech-details-title {
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.tech-details-content {
+  margin-top: 3px;
+}
+
