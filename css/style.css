@@ -194,6 +194,10 @@ color: white;
   background: linear-gradient(-15deg, #f6f6f66c 0%, #eaeaea6c 100%);
 }
 
+#reversi_info{
+  cursor:help;
+}
+
 .tech-details-title {
   font-size: 0.78rem;
   cursor: pointer;
