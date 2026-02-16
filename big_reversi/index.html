@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>巨大オセロ｜32×32マスの巨大なリバーシ</title>
-<meta name="description" content="巨大なオセロ（リバーシ）を無料で遊べるWebアプリ。通常の8×8を超える32×32マスの超巨大盤面で、AI対戦・対人戦が楽しめます。ブラウザで今すぐプレイ！" />
+<title>巨大リバーシ｜32×32マスの巨大オセロ</title>
+<meta name="description" content="巨大なオセロ盤でのゲームを無料で遊べるWebアプリ。通常の8×8を超える32×32マスの超巨大盤面で、AI対戦・対人戦が楽しめます。ブラウザで今すぐプレイ！" />
 <meta name="author" content="Yuki Lab" />
 <link rel="canonical" href="https://yuki-lab.com/big_reversi/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="巨大オセロ｜32×32マスの巨大リバーシ" />
+<meta property="og:title" content="巨大リバーシ｜32×32マスの巨大オセロ" />
 <meta property="og:description" content="巨大なオセロ（リバーシ）を無料で遊べるWebアプリ。通常の8×8を超える32×32マスの超巨大盤面で、AI対戦・対人戦が楽しめます。今すぐプレイ！" />
 <meta property="og:url" content="https://yuki-lab.com/big_reversi/" />
 <meta property="og:site_name" content="Yuki Lab" />
@@ -19,7 +19,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="巨大リバーシ - 32×32マスの巨大なオセロゲーム" />
-<meta name="twitter:description" content="32×32マスの巨大オセロ（巨大リバーシ）をブラウザで無料プレイ。AI対戦・対人戦対応！" />
+<meta name="twitter:description" content="32×32マスの巨大なリバーシ（オセロ）をブラウザで無料プレイ。AI対戦・対人戦対応！" />
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" type="image/png" href="../image/icon/apple-touch-icon-180x180.png">
@@ -679,6 +679,40 @@ body {
   margin: 0 6px;
 }
 
+/* ── Description ── */
+.description {
+  max-width: 720px;
+  margin: 8px auto 0;
+  padding: 18px 20px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 8px 24px rgba(0, 0, 0, 0.35);
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+}
+
+.description h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.description p {
+  margin: 0;
+}
+
+@media (max-width: 599px) {
+  .description {
+    padding: 14px 14px;
+    font-size: 0.82rem;
+  }
+}
+
 
 </style>
 </head>
@@ -686,9 +720,9 @@ body {
 <div class="app">
   <section class="top-panel">
     <div class="title-row">
-      <h1 class="title">巨大オセロ</h1>
+      <h1 class="title">巨大リバーシ</h1>
       <div class="mode-tabs" role="tablist" aria-label="対戦モード">
-        <button type="button" class="tab" data-mode="pvp">対人戦</button>
+        <button type="button" class="tab" data-mode="pvp">オセロ盤</button>
         <button type="button" class="tab active" data-mode="ai">AI対戦</button>
       </div>
     </div>
@@ -744,9 +778,13 @@ body {
       </div>
     </div>
   </section>
+  <section class="description">
+  <h2>巨大リバーシ（オセロ）</h2>
+  <p>32×32マスの盤面で遊ぶオセロゲームです。盤面が広すぎて角や辺にはなかなかたどり着けないため、8×8のオセロとは異なる戦略を考えることが重要になります。終盤、大量の石が一気にひっくり返る瞬間はとにかく爽快！普段オセロをやり慣れている方にもぜひ一度試してほしい新感覚のゲームです。</p>
+</section>
 </div>
 <footer class="site-footer">
-  制作：Yuki Lab | 人気オセロサイト <a href="https://reversi.yuki-lab.com" target="_blank" rel="noopener">リバーシWeb</a> の一周年記念スピンオフ作品です<br>
+  制作：<a href="https://yuki-lab.com/" rel="noopener">Yuki Lab</a> | 人気オセロサイト <a href="https://reversi.yuki-lab.com" target="_blank" rel="noopener">リバーシWeb</a> の一周年記念スピンオフ作品です<br>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -1523,7 +1561,7 @@ body {
     mode = nextMode;
     applyModeUI();
     resetBoard();
-    showToast(mode === "ai" ? "AI対戦モード" : "対人戦モード");
+    showToast(mode === "ai" ? "AI対戦モード" : "オセロ盤モード");
   }
 
   function initEvents() {
