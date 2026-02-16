@@ -63,7 +63,7 @@ body {
 
 /* ── Layout ── */
 .app {
-  height: 100dvh;
+  min-height: 100dvh;
   max-width: 960px;
   margin: 0 auto;
   padding: 10px 12px 12px;
@@ -353,7 +353,7 @@ body {
 /* ── Board Shell ── */
 .board-shell {
   flex: 1;
-  min-height: 0;
+  min-height: 500px;
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
@@ -627,6 +627,7 @@ body {
 
   .board-shell {
     padding: 4px;
+    min-height: 0;
   }
 
   .hud-row {
