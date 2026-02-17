@@ -492,9 +492,14 @@ body {
 
 /* ── Game Over Overlay ── */
 .game-over-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  border-radius: 16px;
+  --game-over-preview-size: clamp(132px, min(68vw, 38dvh), 260px);
+  padding:
+    max(12px, env(safe-area-inset-top))
+    12px
+    max(12px, env(safe-area-inset-bottom));
+  border-radius: 0;
   background: rgba(11, 30, 16, 0.82);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -503,7 +508,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  z-index: 10;
+  z-index: 30;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -528,6 +533,35 @@ body {
   font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+}
+
+.game-over-board {
+  width: var(--game-over-preview-size);
+  height: var(--game-over-preview-size);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.game-over-board.hidden {
+  display: none;
+}
+
+.game-over-board img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-over-actions {
+  width: var(--game-over-preview-size);
+  display: grid;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .game-over-disc {
@@ -563,11 +597,59 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.15s;
-  margin-top: 4px;
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .game-over-btn:hover {
   background: rgba(74, 222, 128, 0.25);
+}
+
+.game-over-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.game-over-btn:disabled:hover {
+  background: rgba(74, 222, 128, 0.15);
+}
+
+.game-over-btn.share {
+  border-color: rgba(255, 255, 255, 0.25);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 40%),
+    linear-gradient(140deg, rgba(32, 32, 32, 0.98), rgba(6, 6, 6, 0.98));
+  color: #f7fafc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+.game-over-btn.share:hover {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 40%),
+    linear-gradient(140deg, rgba(42, 42, 42, 0.98), rgba(10, 10, 10, 0.98));
+}
+
+.game-over-btn.share:disabled:hover {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 40%),
+    linear-gradient(140deg, rgba(32, 32, 32, 0.98), rgba(6, 6, 6, 0.98));
+}
+
+.game-over-btn.save {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.game-over-btn.save:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.game-over-btn.save:disabled:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ── Toast ── */
@@ -640,7 +722,12 @@ body {
   }
 
   .game-over-overlay {
-    border-radius: 14px;
+    --game-over-preview-size: clamp(112px, min(62vw, 30dvh), 200px);
+    gap: 10px;
+    padding:
+      max(10px, env(safe-area-inset-top))
+      10px
+      max(10px, env(safe-area-inset-bottom));
   }
 
   .star-point {
@@ -754,6 +841,15 @@ body {
         <span id="goWhite">2</span>
         <span class="game-over-disc white"></span>
       </div>
+      <div class="game-over-board hidden" id="gameOverBoardWrap">
+        <img id="gameOverBoardImage" alt="最終盤面の画像" loading="lazy" />
+      </div>
+      <div class="game-over-actions">
+        <button type="button" class="game-over-btn save" id="saveBoardBtn" disabled>盤面画像を保存</button>
+        <button type="button" class="game-over-btn share" id="shareResultBtn" disabled>
+          <span>𝕏 で結果を投稿</span>
+        </button>
+      </div>
       <button type="button" class="game-over-btn" id="gameOverBtn">新規ゲーム</button>
     </div>
   </section>
@@ -802,6 +898,11 @@ body {
     [0, -1],           [0, 1],
     [1, -1],  [1, 0],  [1, 1]
   ];
+  const AI_LEVEL_LABELS = {
+    1: "初級",
+    2: "中級",
+    3: "上級"
+  };
 
   // Star point positions for 32x32 (like Go board reference points)
   const STAR_POINTS = [
@@ -833,6 +934,10 @@ body {
   const gameOverTitle = document.getElementById("gameOverTitle");
   const goBlackEl = document.getElementById("goBlack");
   const goWhiteEl = document.getElementById("goWhite");
+  const gameOverBoardWrap = document.getElementById("gameOverBoardWrap");
+  const gameOverBoardImage = document.getElementById("gameOverBoardImage");
+  const shareResultBtn = document.getElementById("shareResultBtn");
+  const saveBoardBtn = document.getElementById("saveBoardBtn");
   const gameOverBtn = document.getElementById("gameOverBtn");
 
   const cellEls = new Array(BOARD_SIZE * BOARD_SIZE);
@@ -864,6 +969,66 @@ body {
   const inBounds = (row, col) => row >= 0 && row < BOARD_SIZE && col >= 0 && col < BOARD_SIZE;
   const opposite = (player) => (player === BLACK ? WHITE : BLACK);
   const colorName = (player) => (player === BLACK ? "黒" : "白");
+  const pad2 = (value) => String(value).padStart(2, "0");
+
+  function getResultLabel(counts) {
+    if (counts.black === counts.white) {
+      return "引き分け";
+    }
+    return counts.black > counts.white ? "黒の勝ち" : "白の勝ち";
+  }
+
+  function buildShareText(counts) {
+    const modeLabel = mode === "ai"
+      ? `AI対戦 (${AI_LEVEL_LABELS[aiLevel] || "中級"})`
+      : "オセロ盤";
+    const resultLabel = getResultLabel(counts);
+    return `巨大リバーシで${modeLabel}を対戦\n結果: ${resultLabel}（黒${counts.black} - 白${counts.white}）\n#YukiLabの巨大リバーシ #オセロ`;
+  }
+
+  function buildSnapshotFilename(counts) {
+    const outcome = counts.black === counts.white
+      ? "draw"
+      : counts.black > counts.white
+        ? "black-win"
+        : "white-win";
+    const now = new Date();
+    const stamp = `${now.getFullYear()}${pad2(now.getMonth() + 1)}${pad2(now.getDate())}-${pad2(now.getHours())}${pad2(now.getMinutes())}${pad2(now.getSeconds())}`;
+    return `big-reversi-${outcome}-b${counts.black}-w${counts.white}-${stamp}.png`;
+  }
+
+  function shareResultOnX() {
+    if (!gameOver) {
+      return;
+    }
+    const counts = countPieces();
+    const params = new URLSearchParams({
+      text: buildShareText(counts),
+      url: document.querySelector("link[rel='canonical']")?.href || window.location.href
+    });
+    const shareUrl = `https://x.com/intent/tweet?${params.toString()}`;
+    const popup = window.open(shareUrl, "_blank", "noopener,noreferrer");
+    if (!popup) {
+      window.location.href = shareUrl;
+    }
+    showToast("X投稿画面を開きました");
+  }
+
+  function downloadBoardSnapshot() {
+    const snapshot = gameOverBoardImage.getAttribute("src");
+    if (!snapshot) {
+      showToast("保存できる盤面画像がありません");
+      return;
+    }
+    const counts = countPieces();
+    const downloadLink = document.createElement("a");
+    downloadLink.href = snapshot;
+    downloadLink.download = buildSnapshotFilename(counts);
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    downloadLink.remove();
+    showToast("盤面画像を保存しました");
+  }
 
   function showToast(message, duration = 1600) {
     toastEl.textContent = message;
@@ -1143,23 +1308,130 @@ body {
     }
   }
 
+  function createBoardSnapshotDataUrl() {
+    const size = 768;
+    const border = 8;
+    const inner = size - border * 2;
+    const cell = inner / BOARD_SIZE;
+    const markerRadius = Math.max(2, cell * 0.12);
+
+    const canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      return "";
+    }
+
+    const gradient = ctx.createLinearGradient(0, border, 0, size - border);
+    gradient.addColorStop(0, "#13952b");
+    gradient.addColorStop(1, "#0d741f");
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.45)";
+    ctx.fillRect(0, 0, size, size);
+    ctx.fillStyle = gradient;
+    ctx.fillRect(border, border, inner, inner);
+
+    ctx.strokeStyle = "rgba(10, 100, 20, 0.95)";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (let i = 0; i <= BOARD_SIZE; i += 1) {
+      const p = border + i * cell;
+      ctx.moveTo(border, p);
+      ctx.lineTo(size - border, p);
+      ctx.moveTo(p, border);
+      ctx.lineTo(p, size - border);
+    }
+    ctx.stroke();
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+    for (const [row, col] of STAR_POINTS) {
+      const x = border + (col + 0.5) * cell;
+      const y = border + (row + 0.5) * cell;
+      ctx.beginPath();
+      ctx.arc(x, y, Math.max(1.8, cell * 0.16), 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    const stoneRadius = cell * 0.39;
+    for (let row = 0; row < BOARD_SIZE; row += 1) {
+      for (let col = 0; col < BOARD_SIZE; col += 1) {
+        const value = board[row][col];
+        if (value === EMPTY) {
+          continue;
+        }
+
+        const x = border + (col + 0.5) * cell;
+        const y = border + (row + 0.5) * cell;
+        const gradient = ctx.createRadialGradient(
+          x - stoneRadius * 0.32,
+          y - stoneRadius * 0.36,
+          stoneRadius * 0.12,
+          x,
+          y,
+          stoneRadius
+        );
+
+        if (value === BLACK) {
+          gradient.addColorStop(0, "#313131");
+          gradient.addColorStop(1, "#0a0a0a");
+        } else {
+          gradient.addColorStop(0, "#ffffff");
+          gradient.addColorStop(1, "#bdbdbd");
+        }
+
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(x, y, stoneRadius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    if (lastMoveIdx !== null) {
+      const row = rowOf(lastMoveIdx);
+      const col = colOf(lastMoveIdx);
+      const x = border + (col + 0.5) * cell;
+      const y = border + (row + 0.5) * cell;
+      ctx.fillStyle = "#ef4444";
+      ctx.beginPath();
+      ctx.arc(x, y, markerRadius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    return canvas.toDataURL("image/png");
+  }
+
+  function updateGameOverBoardImage() {
+    const snapshot = createBoardSnapshotDataUrl();
+    if (!snapshot) {
+      gameOverBoardImage.removeAttribute("src");
+      gameOverBoardWrap.classList.add("hidden");
+      saveBoardBtn.disabled = true;
+      return;
+    }
+
+    gameOverBoardImage.src = snapshot;
+    gameOverBoardWrap.classList.remove("hidden");
+    saveBoardBtn.disabled = false;
+  }
+
   function showGameOverOverlay(counts) {
     goBlackEl.textContent = counts.black;
     goWhiteEl.textContent = counts.white;
+    gameOverTitle.textContent = getResultLabel(counts);
 
-    if (counts.black === counts.white) {
-      gameOverTitle.textContent = "引き分け";
-    } else if (counts.black > counts.white) {
-      gameOverTitle.textContent = "黒の勝ち";
-    } else {
-      gameOverTitle.textContent = "白の勝ち";
-    }
-
+    updateGameOverBoardImage();
+    shareResultBtn.disabled = false;
     gameOverOverlay.classList.add("visible");
   }
 
   function hideGameOverOverlay() {
     gameOverOverlay.classList.remove("visible");
+    gameOverBoardImage.removeAttribute("src");
+    gameOverBoardWrap.classList.add("hidden");
+    shareResultBtn.disabled = true;
+    saveBoardBtn.disabled = true;
   }
 
   function updateStatus(legalCount = null) {
@@ -1172,13 +1444,7 @@ body {
       const turnStone = turnBadgeEl.querySelector(".turn-stone");
       turnStone.className = "turn-stone";
       turnBadgeEl.querySelector("span:last-child").textContent = "ゲーム終了";
-      if (counts.black === counts.white) {
-        stateLineEl.textContent = `引き分け`;
-      } else if (counts.black > counts.white) {
-        stateLineEl.textContent = `黒の勝ち`;
-      } else {
-        stateLineEl.textContent = `白の勝ち`;
-      }
+      stateLineEl.textContent = getResultLabel(counts);
       undoBtn.disabled = history.length === 0;
       showGameOverOverlay(counts);
       return;
@@ -1598,6 +1864,8 @@ body {
       resetBoard();
       showToast("新しいゲームを開始しました");
     });
+    shareResultBtn.addEventListener("click", shareResultOnX);
+    saveBoardBtn.addEventListener("click", downloadBoardSnapshot);
 
     window.addEventListener("resize", () => {
       if (resizeRaf) {
