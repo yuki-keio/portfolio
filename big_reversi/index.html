@@ -1002,9 +1002,9 @@ body {
       return;
     }
     const counts = countPieces();
+    const pageUrl = document.querySelector("link[rel='canonical']")?.href || window.location.href;
     const params = new URLSearchParams({
-      text: buildShareText(counts),
-      url: document.querySelector("link[rel='canonical']")?.href || window.location.href
+      text: buildShareText(counts) + "\n" + pageUrl
     });
     const shareUrl = `https://x.com/intent/tweet?${params.toString()}`;
     window.open(shareUrl, "_blank");
