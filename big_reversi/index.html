@@ -983,7 +983,7 @@ body {
       ? `AI対戦 (${AI_LEVEL_LABELS[aiLevel] || "中級"})`
       : "オセロ盤";
     const resultLabel = getResultLabel(counts);
-    return `巨大リバーシで${modeLabel}を対戦\n結果: ${resultLabel}（黒${counts.black} - 白${counts.white}）\n#YukiLabの巨大リバーシ #オセロ`;
+    return `巨大リバーシ（${modeLabel}モード）\n\n結果: ${resultLabel}（黒${counts.black} - 白${counts.white}）\n\n#YukiLabの巨大リバーシ #オセロ`;
   }
 
   function buildSnapshotFilename(counts) {
@@ -1007,10 +1007,7 @@ body {
       url: document.querySelector("link[rel='canonical']")?.href || window.location.href
     });
     const shareUrl = `https://x.com/intent/tweet?${params.toString()}`;
-    const popup = window.open(shareUrl, "_blank", "noopener,noreferrer");
-    if (!popup) {
-      window.location.href = shareUrl;
-    }
+    window.open(shareUrl, "_blank");
     showToast("X投稿画面を開きました");
   }
 
