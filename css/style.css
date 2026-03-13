@@ -210,3 +210,9 @@ color: white;
   margin-top: 3px;
 }
 
+.books{
+  margin-top: 10px;
+  margin-left: 15px;
+  display: inline-block;
+  color: var(--text-light);
+}
