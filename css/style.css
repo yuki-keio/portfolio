@@ -40,6 +40,13 @@
   margin:0 7.5px;
 }
 
+#mahjongImg{
+  background: radial-gradient(circle at 32% 26%, #167257 0%, #0b4a38 75%);
+  padding: 5px;
+  box-sizing: border-box;
+  transform:scale(1.4)
+}
+
 #github-link:hover .github-logo{
   filter: invert(1);
 }
