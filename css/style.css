@@ -40,7 +40,7 @@
   margin:0 7.5px;
 }
 
-#mahjongImg,#shisenshoImg{
+#mahjongImg,#shisenshoImg,#mahjongSolitaireImg{
   background: radial-gradient(circle at 32% 26%, #167257 0%, #0b4a38 75%);
   padding: 5px;
   box-sizing: border-box;

@@ -56,6 +56,10 @@
   <priority>0.8</priority>
 </url>
 <url>
+  <loc>https://mahjong.yuki-lab.com/mahjong-solitaire/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
   <loc>https://chess.yuki-lab.com/</loc>
   <xhtml:link rel="alternate" hreflang="ja" href="https://chess.yuki-lab.com/" />
   <xhtml:link rel="alternate" hreflang="en" href="https://chess.yuki-lab.com/en/" />
