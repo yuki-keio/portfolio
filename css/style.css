@@ -34,7 +34,7 @@
   color: inherit;
 }
 
-#chessImg,#pinballImg,#countImg{
+#chessImg,#pinballImg,#countImg,#pptCountImg{
   width:35px;
   height:35px;
   margin:0 7.5px;
