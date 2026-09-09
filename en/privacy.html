@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Yuki Lab</title>
+  <meta name="description" content="Privacy policy for yuki-lab.com and its related services: what information we collect, how we use it, third-party disclosure, security measures, and how to make requests or contact us.">
+  <link rel="canonical" href="https://yuki-lab.com/en/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://yuki-lab.com/en/privacy.html">
+  <link rel="alternate" hreflang="ja" href="https://yuki-lab.com/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://yuki-lab.com/privacy.html">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #4b5563;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --line: #e5e7eb;
+      --shadow: 0 18px 50px rgba(12, 42, 92, 0.08);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", "Hiragino Sans", "BIZ UDGothic", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.4; letter-spacing: 0.02em; }
+    p { margin: 0 0 14px; color: var(--muted); }
+    ul { margin: 0 0 14px 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .page-hero {
+      background: linear-gradient(120deg, #0f766e 0%, #1d4ed8 100%);
+      color: #fff;
+      padding: 68px 16px 54px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 35%),
+                  radial-gradient(circle at 80% 10%, rgba(255,255,255,0.18), transparent 32%),
+                  radial-gradient(circle at 60% 70%, rgba(255,255,255,0.12), transparent 36%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 1040px; margin: 0 auto; z-index: 1; }
+
+    .page-hero h1 { font-size: clamp(2.1rem, 3vw, 2.6rem); margin-bottom: 10px; }
+    .lede {
+      font-size: 1.04rem;
+      max-width: 760px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 18px;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: #f8fafc;
+      backdrop-filter: blur(3px);
+    }
+    .page {
+      max-width: 1080px;
+      margin: -26px auto 60px;
+      padding: 0 16px 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+    .card h2 { font-size: 1.25rem; color: var(--ink); }
+    .section-lead { margin-bottom: 14px; font-weight: 600; color: #111827; }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+    .two-col { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f9fbff;
+    }
+    .item h3 { font-size: 1.05rem; margin-bottom: 8px; color: #0f172a; }
+    .note {
+      padding: 12px 14px;
+      background: #ecfeff;
+      color: var(--muted);
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+    .toc { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); padding: 20px 18px; margin-bottom: 18px; }
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .toc a {
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #eef2ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+    .toc a:hover { background: #e0e7ff; }
+    .list-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .list-columns ul { margin-left: 16px; }
+    @media (max-width: 768px) {
+      .page { margin-top: -18px; }
+      .pill { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-hero">
+    <div class="hero-inner">
+      <h1>Privacy Policy</h1>
+      <p class="lede">This policy explains how Yuki Lab handles personal information on yuki-lab.com, its subdomains, and its native apps. The Japanese version (<a href="https://yuki-lab.com/privacy.html" style="color:#fff;text-decoration:underline">日本語</a>) is the authoritative text; this English translation is provided for convenience.</p>
+      <div class="meta-row">
+        <span class="pill">Last updated: September 10, 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="toc">
+      <h2>Contents</h2>
+      <div class="toc-links">
+        <a href="#policy">Basic policy</a>
+        <a href="#data">Information we collect</a>
+        <a href="#purpose">Purposes of use</a>
+        <a href="#services">External services we use</a>
+        <a href="#third-party">Third-party disclosure</a>
+        <a href="#security">Security measures</a>
+        <a href="#rights">Disclosure requests</a>
+        <a href="#eu">EU/EEA and UK residents</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <section id="policy" class="card">
+      <h2>Article 1. Basic policy and scope</h2>
+      <p>Yuki Lab (“we”), which operates yuki-lab.com and its subdomains (for example reversi.yuki-lab.com and shogi.yuki-lab.com) as well as native applications, establishes this privacy policy (the “Policy”) to handle your personal information appropriately.</p>
+      <p>The Policy applies to the following services provided by Yuki Lab:</p>
+      <ul>
+        <li>The websites above (including <a href="https://reversi.yuki-lab.com/en/">Reversi Web</a>, Chess Web, Shogi Web, the character counter and others).</li>
+        <li>The native applications we operate (the “app versions”).</li>
+      </ul>
+      <p>Terms used in the Policy follow the definitions of the Act on the Protection of Personal Information of Japan.</p>
+    </section>
+
+    <section id="data" class="card">
+      <h2>Article 2. Information we collect</h2>
+      <div class="grid two-col">
+        <div class="item">
+          <h3>Information you provide</h3>
+          <ul>
+            <li>On some services (including but not limited to <a href="https://reversi.yuki-lab.com/en/">Reversi Web</a>), the email address, password and other details entered through the optional account registration feature.</li>
+            <li>On some services (including but not limited to Reversi Web), information required for payments. Credit card details are stored by our payment processor, Stripe; we cannot view card numbers. We can view a summary of transaction history in the Stripe dashboard.</li>
+            <li>If you use in-app purchases (Google Play) in the app versions, purchase information provided by Google (purchase token, order number, product ID, subscription status, expiry date, etc.). Payment method details are managed by Google and are not collected by us. We store these to verify purchases and to provide and restore premium features.</li>
+            <li>Anything you enter into our contact forms.</li>
+            <li>Any other information you provide to us.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Information collected automatically</h3>
+          <ul>
+            <li>Behavioural data collected through Google Analytics, Microsoft Clarity and similar tools (pages viewed, clicks, etc.).</li>
+            <li>Advertising-related information from Google AdSense (websites) and Google AdMob (app versions), such as ad impressions and measurement cookies.</li>
+            <li>In the app versions, the advertising identifier (advertising ID) and device identifiers. These are used for ad delivery, measurement and fraud prevention and are sent to Google (AdMob).</li>
+            <li>Other data collected automatically.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="purpose" class="card">
+      <h2>Article 3. Purposes of use</h2>
+      <p class="section-lead">Under the Act on the Protection of Personal Information, we may use the collected information for purposes such as the following.</p>
+      <div class="list-columns">
+        <div>
+          <ul>
+            <li>Creating and authenticating accounts, and providing features that use accounts.</li>
+            <li>Managing payments and subscriptions, processing payments, sending important payment-related notices, and providing paid features.</li>
+            <li>Responding to enquiries.</li>
+            <li>Sending notices of various kinds.</li>
+            <li>Preventing fraud and abuse.</li>
+            <li>Analysis for usability and feature improvement through Google Analytics, Microsoft Clarity and similar tools.</li>
+            <li>Ad delivery, measurement and fraud prevention through Google AdSense, Google AdMob and similar services (including the use of advertising identifiers).</li>
+            <li>System maintenance, security and troubleshooting.</li>
+            <li>Compliance with laws and the exercise or defence of legal rights.</li>
+            <li>Otherwise operating and improving the services appropriately.</li>
+          </ul>
+        </div>
+      </div>
+      <p>When we receive a request based on the law regarding notification or disclosure of purposes of use, we will respond without delay, except where the law provides otherwise (a fee, described below, applies).</p>
+    </section>
+
+    <section id="services" class="card">
+      <h2>Article 4. Main external services we use</h2>
+      <p class="section-lead">Our services use external services such as the following. Not every service uses all of them; which ones are used differs from service to service.</p>
+      <ul>
+        <li><strong>Google AdSense</strong> (websites) and <strong>Google AdMob</strong> (app versions): ad delivery, measurement and fraud prevention. The app versions use advertising identifiers.</li>
+        <li><strong>Google Analytics</strong> and <strong>Microsoft Clarity</strong>: analysis of usage and improvement of our services.</li>
+        <li><strong>Stripe</strong>: payment processing on our websites. Credit card information is sent directly to and stored by Stripe; we do not collect or view card numbers.</li>
+        <li><strong>Google Play</strong>: in-app purchases in the app versions, and verification that a purchase is valid.</li>
+        <li><strong>Cloud databases and servers, and form services</strong>: storage of account information and the content of enquiries.</li>
+      </ul>
+      <p class="note">These are representative examples and not an exhaustive list. We may add or change external services as our services change; in every case they are used within the purposes set out in Article 3.</p>
+    </section>
+
+    <section id="third-party" class="card">
+      <h2>Article 5. Disclosure to third parties</h2>
+      <ul>
+        <li>Usage data for each service and information necessary for payment processing may be sent to providers such as Google (Analytics, AdSense, AdMob, Tag Manager, etc.), Microsoft (Clarity) and Stripe.</li>
+        <li>In the app versions, advertising identifiers (advertising IDs) and similar data are sent to Google (AdMob) for ad delivery, measurement and fraud prevention.</li>
+        <li>For payments, credit card information is sent directly to and stored by Stripe; we do not collect or view card numbers.</li>
+        <li>For in-app purchases in the app versions, purchase tokens and similar data are sent to Google (Google Play) to verify that a purchase is valid.</li>
+        <li>We may disclose information to third parties where required by law, or where necessary to protect a person's life, body or property, in accordance with the law.</li>
+        <li>Records of third-party disclosure will be disclosed upon a request based on the law (a fee, described below, applies).</li>
+      </ul>
+    </section>
+
+    <section id="security" class="card">
+      <h2>Article 6. Security measures</h2>
+      <ul>
+        <li>We select established providers such as Google, Microsoft and Stripe and take care to configure them appropriately.</li>
+        <li>We implement multiple security measures, including access control and the use of HTTPS. For security reasons we do not publish the details, except where disclosure is required by law.</li>
+        <li>We use cloud services provided by companies located in the United States (databases, forms, payments, advertising and analytics), and personal data may be stored on servers located in the United States. We take security measures on the basis of our understanding of the personal data protection regime of the United States.</li>
+      </ul>
+    </section>
+
+    <section id="rights" class="card">
+      <h2>Article 7. Requests for disclosure and similar matters</h2>
+      <p>We respond without delay to requests under the Act on the Protection of Personal Information for “disclosure and similar matters” (notification of purposes of use; disclosure of retained personal data or records of third-party disclosure; correction, addition or deletion; suspension of use or of third-party disclosure), and to other requests based on the law, subject to the exceptions set out in the Policy.</p>
+      <ul>
+        <li>How to request: please contact us through <a href="https://forms.gle/QW8rR4VGaCEgBeVy6">this form</a>. We may ask you to submit documents to verify your identity.</li>
+        <li>Fees: for requests for notification of purposes of use and for disclosure of retained personal data or records of third-party disclosure only, we charge 2,000 yen (tax included) per request. The same amount is charged as an administrative fee even when we cannot comply with the request. No fee applies to requests for correction, addition, deletion, suspension of use or suspension of third-party disclosure.</li>
+        <li>Deleting a Reversi Web account: no form is required. While logged in, you can do this free of charge from the menu inside the service.</li>
+        <li>Retention: we keep account information for as long as the account exists, and delete or anonymise it within a reasonable period after the account is deleted. Information we are required by law to retain is kept for the period required by law.</li>
+        <li>Exceptions: where a statutory exception applies, we may be unable to disclose or suspend use of all or part of the information.</li>
+        <li>Response: we will respond promptly within a reasonable scope.</li>
+        <li>The above does not apply where the law provides otherwise.</li>
+      </ul>
+    </section>
+
+    <section id="name-address" class="card">
+      <h2>Article 8. Disclosure of the operator's name and address</h2>
+      <p>We disclose these without delay upon request from the person whose personal information we handle, or from someone who uses or is considering using our services.</p>
+      <ul>
+        <li>For the operator's name, please use <a href="https://forms.gle/Cfj2WYmhBqmzXHr5A">this form</a>.</li>
+        <li>For the operator's address, please use <a href="https://forms.gle/y3RrfWXQdhpAABer5">this form</a>.</li>
+      </ul>
+    </section>
+
+    <section id="cookies" class="card">
+      <h2>Article 9. Use of cookies and similar technologies</h2>
+      <ul>
+        <li>Google Analytics, Google AdSense, Google AdMob, Microsoft Clarity and similar services may use cookies and similar technologies (advertising identifiers in the app versions) to measure usage and deliver advertising.</li>
+        <li>You can disable cookies in your browser settings, but some features may not work correctly.</li>
+        <li>The advertising identifier used in the app versions can be reset, and personalised advertising can be opted out of, from your device settings.</li>
+        <li>In the EU/EEA, the UK, Switzerland and other applicable regions, a consent message may be shown through Google's consent management tools in connection with Google's ad delivery.</li>
+        <li>For details of advertising and measurement, and how to opt out, please refer to the policies and opt-out add-ons of the respective external tools.</li>
+      </ul>
+    </section>
+
+    <section id="eu" class="card">
+      <h2>Article 10. For residents of the EU/EEA and the UK</h2>
+      <ul>
+        <li>We respect the additional rights provided under the EU General Data Protection Regulation (GDPR) and UK data protection law.</li>
+        <li>Residents of the EU/EEA and the UK have rights under applicable law including withdrawing consent to the processing of personal data, requesting data portability, requesting restriction of processing, and lodging a complaint.</li>
+        <li>To exercise your rights under the law, please contact us through <a href="https://forms.gle/QW8rR4VGaCEgBeVy6">this form</a>.</li>
+        <li>Personal data of residents of the EU/EEA and the UK may be transferred outside the EU/EEA and the UK where necessary; we take appropriate safeguards when doing so.</li>
+        <li>The above does not apply where the law provides otherwise.</li>
+      </ul>
+    </section>
+
+    <section id="revision" class="card">
+      <h2>Article 11. Revisions</h2>
+      <p>The Policy may be revised in line with changes in the law or in our services. Important changes will be announced on this page or within the services.</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Article 12. Enquiries and complaints</h2>
+      <p>For enquiries or complaints about the handling of personal information, please contact us through <a href="https://forms.gle/BU8gCA7TpPmRZAzH9">this form</a>, selecting “Enquiry or complaint about the handling of personal information” as the type of enquiry.</p>
+    </section>
+  </main>
+</body>
+</html>

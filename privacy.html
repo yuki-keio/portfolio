@@ -6,6 +6,9 @@
   <title>プライバシーポリシー | Yuki Lab</title>
   <meta name="description" content="yuki-lab.com および関連サービスのプライバシーポリシーです。取得する情報、利用目的、第三者提供、安全管理措置、開示請求・お問い合わせ方法などを定めています。">
   <link rel="canonical" href="https://yuki-lab.com/privacy.html">
+  <link rel="alternate" hreflang="ja" href="https://yuki-lab.com/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://yuki-lab.com/en/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://yuki-lab.com/privacy.html">
   <style>
     :root {
       --ink: #0f172a;
@@ -112,31 +115,6 @@
       border-radius: 10px;
       margin-top: 8px;
     }
-    .table-wrap { overflow-x: auto; margin-top: 10px; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 720px;
-    }
-    th, td {
-      border: 1px solid var(--line);
-      padding: 12px 12px;
-      text-align: left;
-      vertical-align: top;
-      color: var(--muted);
-      min-width: 200px;
-    }
-    th { background: #eff4ff; color: #0f172a; font-weight: 700; }
-    .badge {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 10px;
-      background: #e0f2fe;
-      color: #0b5394;
-      font-weight: 700;
-      font-size: 0.92rem;
-      margin-bottom: 6px;
-    }
     .toc { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); padding: 20px 18px; margin-bottom: 18px; }
     .toc-links {
       display: flex;
@@ -154,18 +132,6 @@
       font-weight: 600;
     }
     .toc a:hover { background: #e0e7ff; }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #f1f5f9;
-      border: 1px solid var(--line);
-      color: #0f172a;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
     .list-columns {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -174,8 +140,6 @@
     .list-columns ul { margin-left: 16px; }
     @media (max-width: 768px) {
       .page { margin-top: -18px; }
-      table { min-width: 100%; }
-      th, td { font-size: 0.95rem; }
       .pill { width: 100%; }
     }
   </style>
@@ -188,7 +152,7 @@
         お客様の個人情報について、次のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。本ポリシーで使用する用語の意味は、個人情報の保護に関する法律（以下「個人情報保護法」といいます。）に準拠します。
       </p>
       <div class="meta-row">
-        <span class="pill">最終更新日：2026年9月8日</span>
+        <span class="pill">最終更新日：2026年9月10日</span>
       </div>
     </div>
   </header>
@@ -200,7 +164,7 @@
         <a href="#policy">基本方針</a>
         <a href="#data">取得する情報</a>
         <a href="#purpose">利用目的</a>
-        <a href="#services">各サービス特有の情報</a>
+        <a href="#services">利用する外部サービス</a>
         <a href="#third-party">第三者提供</a>
         <a href="#security">安全管理措置</a>
         <a href="#rights">開示等の請求</a>
@@ -212,10 +176,10 @@
     <section id="policy" class="card">
       <h2>第一条 基本方針と適用範囲</h2>
       <p>
-        yuki-lab.com およびそのサブドメイン（例：reversi.yuki-lab.com、shogi.yuki-lab.com、4137game.yuki-lab.com、count.yuki-lab.com など）およびネイティブアプリケーションを運営する Yuki Lab（以下「当方」）は、個人情報の適切な取り扱いのため、お客様の個人情報について次のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。</p>
+        yuki-lab.com およびそのサブドメイン（例：reversi.yuki-lab.com、shogi.yuki-lab.com など）およびネイティブアプリケーションを運営する Yuki Lab（以下「当方」）は、個人情報の適切な取り扱いのため、お客様の個人情報について次のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。</p>
       <p>本ポリシーは、当方（Yuki Lab）が提供する次のサービスに適用されます。</p>
       <ul>
-        <li>上記のウェブサイト（<a href="https://reversi.yuki-lab.com">リバーシWeb</a>、将棋Web、文字数カウンター など）。</li>
+        <li>上記のウェブサイト（<a href="https://reversi.yuki-lab.com">リバーシWeb</a>、チェスWeb、将棋Web、文字数カウンター など）。</li>
         <li>当方が運営するネイティブアプリケーション（以下「アプリ版」といいます。）。</li>
       </ul>
       <p>なお、本ポリシーで使用する用語の意味は、個人情報保護法に準拠します。</p>
@@ -269,54 +233,16 @@
     </section>
 
     <section id="services" class="card">
-      <h2>第四条 各サービスにおいて取り扱う主な情報</h2>
-      <p class="section-lead">各サービスで利用する主な外部サービスと関連する情報は次のとおりです。</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>対象サービス</th>
-              <th>利用する主な外部サービス</th>
-              <th>関連する情報</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div>リバーシWeb <br>（ウェブ版。他言語版を含む）</div>
-                <div class="badge">reversi.yuki-lab.comなど</div>
-              </td>
-              <td>Google AdSense、Google Analytics、Microsoft Clarity、Stripe（決済）、Heroku Postgres など</td>
-              <td>広告配信に関連する情報、利用状況データ、決済に関する情報、任意登録アカウントのメールアドレス・パスワードおよびその他のアカウントに関連付けられた情報。</td>
-            </tr>
-            <tr>
-              <td>
-                <div>リバーシWeb アプリ版</div>
-                <div class="badge">ネイティブアプリケーション</div>
-              </td>
-              <td>Google AdMob（広告）、Google Play（アプリ内課金）、Google Analytics、Heroku Postgres など</td>
-              <td>広告配信に関連する情報（広告識別子を含みます）、利用状況データ、アプリ内課金の購入情報（購入トークン・注文番号・商品ID・契約の状態など）、任意登録アカウントのメールアドレス・パスワードおよびその他のアカウントに関連付けられた情報。アプリ版では Google AdSense および Microsoft Clarity は利用していません。</td>
-            </tr>
-            <tr>
-              <td>
-                <div>将棋Web</div>
-                <div class="badge">shogi.yuki-lab.com</div>
-              </td>
-              <td>Google AdSense、Google Analytics</td>
-              <td>広告配信に関連する情報、利用状況データなど。</td>
-            </tr>
-            <tr>
-              <td>
-                <div>文字数カウンター等、一部サイト</div>
-                <div class="badge">count.yuki-lab.com 他</div>
-              </td>
-              <td>Google AdSense、Google Analytics などを利用する場合があります</td>
-              <td>広告配信に関連する情報、利用状況データなどを利用する場合があります。</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">上記以外のサブドメインでも第三条に掲げる目的で外部ツールを利用する場合があります。</p>
+      <h2>第四条 利用する主な外部サービス</h2>
+      <p class="section-lead">当方のサービスでは、次のような外部サービスを利用しています。すべてのサービスで同じものを利用しているわけではなく、サービスごとに利用するものは異なります。</p>
+      <ul>
+        <li><strong>Google AdSense</strong>（ウェブサイト）・<strong>Google AdMob</strong>（アプリ版）：広告の配信、効果測定、不正防止。アプリ版では広告識別子を利用します。</li>
+        <li><strong>Google Analytics</strong>・<strong>Microsoft Clarity</strong>：利用状況の分析とサービスの改善。</li>
+        <li><strong>Stripe</strong>：ウェブサイトでの決済処理。クレジットカード情報は Stripe に直接送信・保存され、当方はカード番号等を取得・閲覧しません。</li>
+        <li><strong>Google Play</strong>：アプリ版のアプリ内課金と、購入が有効であることの確認。</li>
+        <li><strong>クラウドのデータベース・サーバー、フォームサービス</strong>：アカウント情報やお問い合わせ内容の保存。</li>
+      </ul>
+      <p class="note">上記は代表例であり、これらに限られません。サービスの改善や変更に伴って外部サービスを追加・変更する場合がありますが、いずれの場合も第三条に掲げる目的の範囲内で利用します。</p>
     </section>
 
     <section id="third-party" class="card">
@@ -326,7 +252,7 @@
         <li>アプリ版では、広告の配信・効果測定・不正防止のために、広告識別子（広告 ID）等が Google（AdMob）に送信されます。</li>
         <li>決済に際し、クレジットカード情報は Stripe に直接送信・保存され、当方はカード番号等を取得・閲覧しません。</li>
         <li>アプリ版のアプリ内課金では、購入が有効であることを確認するために、購入トークン等を Google（Google Play）に送信します。</li>
-        <li>法令の遵守のために必要な場合や人の生命・財産の保護のために必要な場合、法令に基づき第三者に提供することがあります。</li>
+        <li>法令の遵守のために必要な場合や人の生命、身体又は財産の保護のために必要な場合、法令に基づき第三者に提供することがあります。</li>
         <li>第三者提供記録については、法令に基づく請求があった場合に開示します（後述の手数料を承ります）。</li>
       </ul>
     </section>
@@ -336,6 +262,7 @@
       <ul>
         <li>Google、Microsoft、Stripe など実績のあるプロバイダーを選定し、必要に応じて適切な設定を心がけています。</li>
         <li>アクセス制御やHTTPSの利用など複数のセキュリティ施策を実施しています。セキュリティの観点から詳細は公開できません。ただし、法令に基づき開示が必要な場合はこの限りではありません。</li>
+        <li>当方は、米国に所在する事業者が提供するクラウドサービス（データベース、フォーム、決済、広告・分析など）を利用しており、個人データが米国に所在するサーバーに保存されることがあります。当方は、米国における個人情報の保護に関する制度等を把握した上で、安全管理措置を講じています。</li>
       </ul>
     </section>
 
@@ -345,7 +272,8 @@
       <ul>
         <li>請求方法：<a href="https://forms.gle/QW8rR4VGaCEgBeVy6">こちらのフォーム</a>からご連絡ください。本人確認のため、必要書類の提出をお願いする場合があります。</li>
         <li>手数料：利用目的の通知、保有個人データまたは第三者提供記録の開示の請求に限り、1件につき 2,000円（税込）を申し受けます。請求に応じられない場合も、事務手数料として同額を申し受けます。訂正・追加・削除、利用停止、第三者提供の停止の請求には手数料はかかりません。</li>
-        <li>リバーシWebのアカウント削除：Googleフォームから申請する必要はありません。ログインした状態で、メニューの「アカウント削除」から無料で手続きできます。</li>
+        <li>リバーシWebのアカウント削除：Googleフォームから申請する必要はありません。ログインした状態で、サービス内のメニューから無料で手続きできます。</li>
+        <li>保存期間：アカウント情報はアカウントが存在する間保存し、削除後は合理的な期間内に削除または匿名化します。法令上保存が必要な情報はその期間保存します。</li>
         <li>例外：法令に基づく例外事由に該当する場合は、全部または一部について開示・利用停止等に応じられないことがあります。</li>
         <li>回答方法：合理的な範囲で速やかに対応します。</li>
         <li>ただし、法令による別途の規定がある場合はこの限りではありません。</li>
@@ -354,10 +282,10 @@
 
     <section id="name-address" class="card">
       <h2>第八条 運営者の氏名・住所の開示</h2>
-      <p>下記のフォームから請求があった後に遅滞なく開示します。</p>
+      <p>本人（当方が個人情報を取り扱っている方）、または当方のサービスをご利用中もしくはご利用を検討されている方からのご請求に応じて、遅滞なく開示します。</p>
       <ul>
-        <li>運営者の氏名については、<a href="https://forms.gle/Cfj2WYmhBqmzXHr5A">こちらのフォーム</a>から請求があった場合に遅滞なく開示します。</li>
-        <li>運営者の住所については、<a href="https://forms.gle/y3RrfWXQdhpAABer5">こちらのフォーム</a>から請求があった場合に遅滞なく開示します。</li>
+        <li>運営者の氏名については、<a href="https://forms.gle/Cfj2WYmhBqmzXHr5A">こちらのフォーム</a>からご請求ください。</li>
+        <li>運営者の住所については、<a href="https://forms.gle/y3RrfWXQdhpAABer5">こちらのフォーム</a>からご請求ください。</li>
       </ul>
     </section>
 
@@ -367,7 +295,7 @@
         <li>Google Analytics、Google AdSense、Google AdMob、Microsoft Clarity 等でクッキーや類似の技術（アプリ版では広告識別子）を利用し、利用状況の計測や広告配信を行う場合があります。</li>
         <li>ブラウザ設定でクッキーを無効化できますが、一部機能が正しく動作しない場合があります。</li>
         <li>アプリ版で利用する広告識別子は、ご利用の端末の設定からリセット、または広告のパーソナライズをオプトアウトできます。</li>
-        <li>EU/EEA・英国など対象となる地域では、広告および計測について Google の同意管理ツール（UMP）を通じて同意を取得しています。</li>
+        <li>EU/EEA・英国・スイスなど対象となる地域では、Google の広告配信に関して、Google の同意管理の仕組みを通じて同意メッセージが表示される場合があります。</li>
         <li>広告・計測の詳細やオプトアウト方法は、各外部ツールのポリシーやオプトアウトアドオンをご確認ください。</li>
       </ul>
     </section>
