@@ -188,6 +188,34 @@
   <priority>0.8</priority>
 </url>
 <url>
+  <loc>https://checkers.yuki-lab.com/2-player/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://checkers.yuki-lab.com/2-player/" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://checkers.yuki-lab.com/ja/2-player/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://checkers.yuki-lab.com/2-player/" />
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://checkers.yuki-lab.com/ja/2-player/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://checkers.yuki-lab.com/2-player/" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://checkers.yuki-lab.com/ja/2-player/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://checkers.yuki-lab.com/2-player/" />
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://checkers.yuki-lab.com/rules/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://checkers.yuki-lab.com/rules/" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://checkers.yuki-lab.com/ja/rules/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://checkers.yuki-lab.com/rules/" />
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://checkers.yuki-lab.com/ja/rules/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://checkers.yuki-lab.com/rules/" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://checkers.yuki-lab.com/ja/rules/" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://checkers.yuki-lab.com/rules/" />
+  <priority>0.8</priority>
+</url>
+<url>
   <loc>https://yuki-lab.com/privacy.html</loc>
   <xhtml:link rel="alternate" hreflang="ja" href="https://yuki-lab.com/privacy.html" />
   <xhtml:link rel="alternate" hreflang="en" href="https://yuki-lab.com/en/privacy.html" />
