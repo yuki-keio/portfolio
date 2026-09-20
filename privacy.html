@@ -108,6 +108,8 @@
       background: #f9fbff;
     }
     .item h3 { font-size: 1.05rem; margin-bottom: 8px; color: #0f172a; }
+    .item p { margin-bottom: 8px; }
+    .card > h3 { font-size: 1.05rem; margin-top: 22px; }
     .note {
       padding: 12px 14px;
       background: #ecfeff;
@@ -152,7 +154,7 @@
         お客様の個人情報について、次のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。本ポリシーで使用する用語の意味は、個人情報の保護に関する法律（以下「個人情報保護法」といいます。）に準拠します。
       </p>
       <div class="meta-row">
-        <span class="pill">最終更新日：2026年9月10日</span>
+        <span class="pill">最終更新日：2026年9月21日</span>
       </div>
     </div>
   </header>
@@ -164,7 +166,7 @@
         <a href="#policy">基本方針</a>
         <a href="#data">取得する情報</a>
         <a href="#purpose">利用目的</a>
-        <a href="#services">利用する外部サービス</a>
+        <a href="#services">外部サービス・外部送信</a>
         <a href="#third-party">第三者提供</a>
         <a href="#security">安全管理措置</a>
         <a href="#rights">開示等の請求</a>
@@ -204,6 +206,7 @@
             <li>Google Analytics や Microsoft Clarity 等による行動データ（ページ閲覧情報、クリック情報など）。</li>
             <li>Google AdSense（ウェブサイト）および Google AdMob（アプリ版）による広告配信関連の情報（広告表示回数、計測用クッキー等）。</li>
             <li>アプリ版における広告識別子（広告 ID）・端末識別子。広告の配信、効果測定、不正防止のために利用し、Google（AdMob）に送信されます。</li>
+            <li><a href="https://reversi.yuki-lab.com">リバーシWeb</a>のオンライン対戦（レート戦）における対局の記録（棋譜、各着手に要した時間、対局中に画面を離れた状況、端末の種別、対局前後のレート、対局者の識別子）。不正行為（対局中の外部ソフトの使用等）の調査および防止のために、一定期間保存します。</li>
             <li>その他、自動的に取得されたデータ。</li>
           </ul>
         </div>
@@ -233,16 +236,78 @@
     </section>
 
     <section id="services" class="card">
-      <h2>第四条 利用する主な外部サービス</h2>
-      <p class="section-lead">当方のサービスでは、次のような外部サービスを利用しています。すべてのサービスで同じものを利用しているわけではなく、サービスごとに利用するものは異なります。</p>
+      <h2>第四条 外部サービスの利用と情報の外部送信</h2>
+      <p class="section-lead">当方のウェブサイトとアプリ版では次の外部サービスを利用しており、お客様のブラウザやアプリからそれぞれの会社へ情報が送信されます（電気通信事業法第27条の12に基づく公表事項です）。サイトやアプリによって使っていないサービスもあります。</p>
+      <div class="grid two-col">
+        <div class="item">
+          <h3>Google アナリティクス</h3>
+          <p><strong>送信先：</strong>Google LLC およびその関係会社</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、おおよその位置情報、閲覧したページとページ内での操作、Cookieに保存された識別番号</p>
+          <p><strong>利用目的：</strong>当方は、利用状況を分析してサービスを改善するために利用します。Google は、利用者の閲覧の傾向や履歴を分析するために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Google AdSense</h3>
+          <p><strong>送信先：</strong>Google LLC およびその関係会社</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、閲覧したページ、広告の表示やクリックの記録、Cookieに保存された識別番号</p>
+          <p><strong>利用目的：</strong>当方は、広告を表示してサービスの運営費をまかなうために利用します。Google は、広告や各種情報を配信するために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Google 広告</h3>
+          <p><strong>送信先：</strong>Google LLC およびその関係会社</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、閲覧したページ、Cookieに保存された識別番号</p>
+          <p><strong>利用目的：</strong>当方は、当方が出した広告の効果を測るため、また当サイトを訪れたことのある方に当方の広告を表示するために利用します。Google は、広告の配信と効果の測定のために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Microsoft Clarity</h3>
+          <p><strong>送信先：</strong>Microsoft Corporation</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、閲覧したページの画面の内容（入力欄の文字などは伏せた状態）、ページ内での操作（クリック、スクロール、マウスの動き）の記録、Cookieに保存された識別番号</p>
+          <p><strong>利用目的：</strong>当方は、使いにくい箇所を見つけてサービスを改善するために利用します。Microsoft は、Clarity の提供・改善と、広告（Microsoft Advertising）のために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Cloudflare Web Analytics</h3>
+          <p><strong>送信先：</strong>Cloudflare, Inc.</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、閲覧したページのURLと参照元のURL、ページの表示や操作への反応にかかった時間、表示のずれの大きさとそれが起きた画面上の部品の情報、ブラウザのメモリ使用量（Cookieは使いません）</p>
+          <p><strong>利用目的：</strong>当方は、アクセス数とページの表示速度を把握するために利用します。Cloudflare は、このサービスを提供するために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Google Fonts</h3>
+          <p><strong>送信先：</strong>Google LLC およびその関係会社</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、閲覧中のサイトのドメイン名</p>
+          <p><strong>利用目的：</strong>当方は、文字を正しく表示するために利用します。Google は、フォントを配信し、そのサービスを改善するために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Tailwind CSS</h3>
+          <p><strong>送信先：</strong>Tailwind Labs Inc.</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、閲覧中のサイトのドメイン名</p>
+          <p><strong>利用目的：</strong>当方は、画面のデザインを正しく表示するために利用します。Tailwind Labs は、このプログラムを配信するために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>cdnjs</h3>
+          <p><strong>送信先：</strong>Cloudflare, Inc.</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、閲覧中のサイトのドメイン名</p>
+          <p><strong>利用目的：</strong>当方は、QRコードの表示に使うプログラムを読み込むために利用します。Cloudflare は、このプログラムを配信するために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Stripe（購入手続きのページ）</h3>
+          <p><strong>送信先：</strong>Stripe, Inc. およびその関係会社（Stripe Japan 株式会社を含みます）</p>
+          <p><strong>送信される情報：</strong>ブラウザ・端末・通信に関する情報（IPアドレスを含みます）、言語の設定、閲覧したページ、ページ内での操作（マウスの動きを含みます）の記録</p>
+          <p><strong>利用目的：</strong>当方は、決済を行い、不正な利用を防ぐために利用します。Stripe は、決済サービスの提供、不正利用の検知、サービスの分析・改善のために利用します。</p>
+        </div>
+        <div class="item">
+          <h3>Google AdMob（アプリ版）</h3>
+          <p><strong>送信先：</strong>Google LLC およびその関係会社</p>
+          <p><strong>送信される情報：</strong>端末・通信に関する情報（IPアドレスを含みます）、利用中のアプリに関する情報、広告の表示やクリックの記録、広告IDをはじめとする端末の識別番号</p>
+          <p><strong>利用目的：</strong>当方は、広告を表示してアプリの運営費をまかなうために利用します。Google は、広告や各種情報を配信するために利用します。</p>
+        </div>
+      </div>
+      <p class="note">各社での情報の利用目的の詳細は、<a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google</a>、<a href="https://www.microsoft.com/ja-jp/privacy/privacystatement">Microsoft</a>、<a href="https://www.cloudflare.com/ja-jp/privacypolicy/">Cloudflare</a>、<a href="https://stripe.com/jp/privacy">Stripe</a> の各ページをご覧ください。Google の広告のカスタマイズは<a href="https://adssettings.google.com/">広告設定</a>から、Google アナリティクスへの送信は<a href="https://tools.google.com/dlpage/gaoptout?hl=ja">オプトアウト アドオン</a>で停止できます。</p>
+      <h3>サービスの提供に利用する外部サービス</h3>
       <ul>
-        <li><strong>Google AdSense</strong>（ウェブサイト）・<strong>Google AdMob</strong>（アプリ版）：広告の配信、効果測定、不正防止。アプリ版では広告識別子を利用します。</li>
-        <li><strong>Google Analytics</strong>・<strong>Microsoft Clarity</strong>：利用状況の分析とサービスの改善。</li>
         <li><strong>Stripe</strong>：ウェブサイトでの決済処理。クレジットカード情報は Stripe に直接送信・保存され、当方はカード番号等を取得・閲覧しません。</li>
         <li><strong>Google Play</strong>：アプリ版のアプリ内課金と、購入が有効であることの確認。</li>
         <li><strong>クラウドのデータベース・サーバー、フォームサービス</strong>：アカウント情報やお問い合わせ内容の保存。</li>
       </ul>
-      <p class="note">上記は代表例であり、これらに限られません。サービスの改善や変更に伴って外部サービスを追加・変更する場合がありますが、いずれの場合も第三条に掲げる目的の範囲内で利用します。</p>
+      <p class="note">外部サービスを追加・変更した場合は、本条を更新します。いずれの場合も第三条に掲げる目的の範囲内で利用します。</p>
     </section>
 
     <section id="third-party" class="card">
@@ -296,7 +361,7 @@
         <li>ブラウザ設定でクッキーを無効化できますが、一部機能が正しく動作しない場合があります。</li>
         <li>アプリ版で利用する広告識別子は、ご利用の端末の設定からリセット、または広告のパーソナライズをオプトアウトできます。</li>
         <li>EU/EEA・英国・スイスなど対象となる地域では、Google の広告配信に関して、Google の同意管理の仕組みを通じて同意メッセージが表示される場合があります。</li>
-        <li>広告・計測の詳細やオプトアウト方法は、各外部ツールのポリシーやオプトアウトアドオンをご確認ください。</li>
+        <li>広告・計測の詳細やオプトアウト方法は、第四条に記載の各社のページをご確認ください。</li>
       </ul>
     </section>
 

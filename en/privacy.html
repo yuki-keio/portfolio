@@ -108,6 +108,8 @@
       background: #f9fbff;
     }
     .item h3 { font-size: 1.05rem; margin-bottom: 8px; color: #0f172a; }
+    .item p { margin-bottom: 8px; }
+    .card > h3 { font-size: 1.05rem; margin-top: 22px; }
     .note {
       padding: 12px 14px;
       background: #ecfeff;
@@ -150,7 +152,7 @@
       <h1>Privacy Policy</h1>
       <p class="lede">This policy explains how Yuki Lab handles personal information on yuki-lab.com, its subdomains, and its native apps. The Japanese version (<a href="https://yuki-lab.com/privacy.html" style="color:#fff;text-decoration:underline">日本語</a>) is the authoritative text; this English translation is provided for convenience.</p>
       <div class="meta-row">
-        <span class="pill">Last updated: September 10, 2026</span>
+        <span class="pill">Last updated: September 21, 2026</span>
       </div>
     </div>
   </header>
@@ -162,7 +164,7 @@
         <a href="#policy">Basic policy</a>
         <a href="#data">Information we collect</a>
         <a href="#purpose">Purposes of use</a>
-        <a href="#services">External services we use</a>
+        <a href="#services">External services and data transmission</a>
         <a href="#third-party">Third-party disclosure</a>
         <a href="#security">Security measures</a>
         <a href="#rights">Disclosure requests</a>
@@ -201,6 +203,7 @@
             <li>Behavioural data collected through Google Analytics, Microsoft Clarity and similar tools (pages viewed, clicks, etc.).</li>
             <li>Advertising-related information from Google AdSense (websites) and Google AdMob (app versions), such as ad impressions and measurement cookies.</li>
             <li>In the app versions, the advertising identifier (advertising ID) and device identifiers. These are used for ad delivery, measurement and fraud prevention and are sent to Google (AdMob).</li>
+            <li>Records of online rated matches on <a href="https://reversi.yuki-lab.com/en/">Reversi Web</a> (the move record, the time taken for each move, whether the player left the screen during the game, the device type, the ratings before and after the game, and player identifiers). These are retained for a limited period to investigate and prevent cheating, such as the use of external software during a game.</li>
             <li>Other data collected automatically.</li>
           </ul>
         </div>
@@ -230,16 +233,78 @@
     </section>
 
     <section id="services" class="card">
-      <h2>Article 4. Main external services we use</h2>
-      <p class="section-lead">Our services use external services such as the following. Not every service uses all of them; which ones are used differs from service to service.</p>
+      <h2>Article 4. External services and transmission of information to them</h2>
+      <p class="section-lead">Our websites and app versions use the external services below, and information is sent from your browser or app to each company. This is our public notice under Article 27-12 of Japan's Telecommunications Business Act (the authoritative Japanese text is <a href="https://yuki-lab.com/privacy.html#services">here</a>). Not every site or app uses all of them.</p>
+      <div class="grid two-col">
+        <div class="item">
+          <h3>Google Analytics</h3>
+          <p><strong>Recipient:</strong> Google LLC and its affiliates</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), approximate location, pages you view and your actions on them, and identifiers stored in cookies</p>
+          <p><strong>Purpose:</strong> We use it to analyse usage and improve our services. Google uses it to analyse browsing trends and history.</p>
+        </div>
+        <div class="item">
+          <h3>Google AdSense</h3>
+          <p><strong>Recipient:</strong> Google LLC and its affiliates</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), pages you view, ad impressions and clicks, and identifiers stored in cookies</p>
+          <p><strong>Purpose:</strong> We use it to show ads that cover the cost of running our services. Google uses it to deliver ads and other information.</p>
+        </div>
+        <div class="item">
+          <h3>Google Ads</h3>
+          <p><strong>Recipient:</strong> Google LLC and its affiliates</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), pages you view, and identifiers stored in cookies</p>
+          <p><strong>Purpose:</strong> We use it to measure the effectiveness of our own ads and to show our ads to people who have visited our sites. Google uses it to deliver and measure ads.</p>
+        </div>
+        <div class="item">
+          <h3>Microsoft Clarity</h3>
+          <p><strong>Recipient:</strong> Microsoft Corporation</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), pages you view and what they display (with text typed into input fields hidden), records of your actions on them (clicks, scrolling and mouse movement), and identifiers stored in cookies</p>
+          <p><strong>Purpose:</strong> We use it to find parts of our services that are hard to use and improve them. Microsoft uses it to provide and improve Clarity and for advertising (Microsoft Advertising).</p>
+        </div>
+        <div class="item">
+          <h3>Cloudflare Web Analytics</h3>
+          <p><strong>Recipient:</strong> Cloudflare, Inc.</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), the URL of the page you view and the referring URL, how long the page took to load and to respond to your actions, how much the layout shifted and which on-screen elements shifted, and browser memory usage (no cookies are used)</p>
+          <p><strong>Purpose:</strong> We use it to understand traffic and page speed. Cloudflare uses it to provide this service.</p>
+        </div>
+        <div class="item">
+          <h3>Google Fonts</h3>
+          <p><strong>Recipient:</strong> Google LLC and its affiliates</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), and the domain name of the site you are viewing</p>
+          <p><strong>Purpose:</strong> We use it to display text correctly. Google uses it to deliver fonts and improve that service.</p>
+        </div>
+        <div class="item">
+          <h3>Tailwind CSS</h3>
+          <p><strong>Recipient:</strong> Tailwind Labs Inc.</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), and the domain name of the site you are viewing</p>
+          <p><strong>Purpose:</strong> We use it to display page designs correctly. Tailwind Labs uses it to deliver this program.</p>
+        </div>
+        <div class="item">
+          <h3>cdnjs</h3>
+          <p><strong>Recipient:</strong> Cloudflare, Inc.</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), and the domain name of the site you are viewing</p>
+          <p><strong>Purpose:</strong> We use it to load the program that displays QR codes. Cloudflare uses it to deliver this program.</p>
+        </div>
+        <div class="item">
+          <h3>Stripe (checkout page)</h3>
+          <p><strong>Recipient:</strong> Stripe, Inc. and its affiliates (including Stripe Japan K.K.)</p>
+          <p><strong>Information sent:</strong> information about your browser, device and connection (including your IP address), language settings, pages you view, and records of your actions on them (including mouse movement)</p>
+          <p><strong>Purpose:</strong> We use it to process payments and prevent fraud. Stripe uses it to provide its payment services, detect fraud, and analyse and improve its services.</p>
+        </div>
+        <div class="item">
+          <h3>Google AdMob (app versions)</h3>
+          <p><strong>Recipient:</strong> Google LLC and its affiliates</p>
+          <p><strong>Information sent:</strong> information about your device and connection (including your IP address), the app you are using, ad impressions and clicks, and device identifiers including the advertising ID</p>
+          <p><strong>Purpose:</strong> We use it to show ads that cover the cost of running our apps. Google uses it to deliver ads and other information.</p>
+        </div>
+      </div>
+      <p class="note">For details of how each company uses the information, see the pages of <a href="https://policies.google.com/technologies/partner-sites?hl=en">Google</a>, <a href="https://www.microsoft.com/en-us/privacy/privacystatement">Microsoft</a>, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> and <a href="https://stripe.com/privacy">Stripe</a>. You can control ad personalisation from Google's <a href="https://adssettings.google.com/">Ad Settings</a> and stop sending data to Google Analytics with the <a href="https://tools.google.com/dlpage/gaoptout?hl=en">opt-out add-on</a>.</p>
+      <h3>External services used to provide our services</h3>
       <ul>
-        <li><strong>Google AdSense</strong> (websites) and <strong>Google AdMob</strong> (app versions): ad delivery, measurement and fraud prevention. The app versions use advertising identifiers.</li>
-        <li><strong>Google Analytics</strong> and <strong>Microsoft Clarity</strong>: analysis of usage and improvement of our services.</li>
         <li><strong>Stripe</strong>: payment processing on our websites. Credit card information is sent directly to and stored by Stripe; we do not collect or view card numbers.</li>
         <li><strong>Google Play</strong>: in-app purchases in the app versions, and verification that a purchase is valid.</li>
         <li><strong>Cloud databases and servers, and form services</strong>: storage of account information and the content of enquiries.</li>
       </ul>
-      <p class="note">These are representative examples and not an exhaustive list. We may add or change external services as our services change; in every case they are used within the purposes set out in Article 3.</p>
+      <p class="note">We update this article when we add or change external services. In every case they are used within the purposes set out in Article 3.</p>
     </section>
 
     <section id="third-party" class="card">
@@ -293,7 +358,7 @@
         <li>You can disable cookies in your browser settings, but some features may not work correctly.</li>
         <li>The advertising identifier used in the app versions can be reset, and personalised advertising can be opted out of, from your device settings.</li>
         <li>In the EU/EEA, the UK, Switzerland and other applicable regions, a consent message may be shown through Google's consent management tools in connection with Google's ad delivery.</li>
-        <li>For details of advertising and measurement, and how to opt out, please refer to the policies and opt-out add-ons of the respective external tools.</li>
+        <li>For details of advertising and measurement, and how to opt out, please see the company pages listed in Article 4.</li>
       </ul>
     </section>
 
