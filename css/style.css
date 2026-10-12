@@ -171,6 +171,17 @@ color: white;
   background: linear-gradient(135deg, #009c10 0%, #00850e 100%);
 }
 
+.reversi-link-btn:focus-visible {
+  outline: 3px solid #11633d;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reversi-link-btn {
+    transition: none;
+  }
+}
+
 #github-link-second{
   transition: all 0.3s ease;
 }
